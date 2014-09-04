@@ -31,14 +31,25 @@ void Array2D::test(){
     }
 }
 
-char* Array2D::toString(){
-    char* chars = new char[nRows * nCols ];
+const char* Array2D::toString(){
+    stringstream ss;
+    ss << "[";
     for( int r = 0; r < nRows; r++ ){
+        ss << " [";
         for( int c = 0; c < nCols; c++ ){
-            chars[r * nCols + c] = static_cast<char>( array[r][c] );
+            ss << array[r][c];
+            if( c != ( nCols - 1) ){
+                ss << ", ";
+            }
+        }
+        ss << "]";
+        if( r != ( nRows - 1) ){
+            ss << ", ";
         }
     }
-//    chars[0] = static_cast<char>( array[0][4] );
+    ss << " ]";
+    char* chars = new char[ ss.str().length() ];
+    strcpy( chars, ss.str().c_str() );
     return chars;
 }
 

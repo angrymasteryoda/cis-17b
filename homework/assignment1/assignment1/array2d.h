@@ -3,6 +3,9 @@
 
 #include <cstdlib>
 #include <iostream>
+#include <cstring>
+#include <sstream>
+#include <string>
 
 using namespace std;
 class Array2D {
@@ -12,7 +15,7 @@ class Array2D {
         int getNRows();
         int getNCols();
         int** getArray();
-        char* toString();
+        const char* toString();
         void setNRows( int );
         void setNCols( int );
         void test();
