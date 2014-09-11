@@ -29,7 +29,7 @@ O-------------------------------------------------------------O
 |                           09/10/14                          |
 O-------------------------------------------------------------O
 
-
+homework revisment
 abstract
     virtual 
         function
@@ -40,3 +40,30 @@ base class
     fillarray
 inherited
     toString
+    
+    
+group project 4 groups 
+qt interface with a db,
+windows based, take in inputs,
+if game has to be playable, score should be seen at the end
+
+in the past some people did multiple games in one program so you had a menu to choose what game you wanted to play
+
+individual project will be much smaller ie 1/5th the size
+
+need a list of projects for group projects
+group project ideas
+* guess who
+* conways game of life
+* rpg -> visual (like mud, zelda like )
+* Oregon trail
+* yahtzee
+* casino game
+* master mind
+* chess ( you could create a server and peers )
+
+
+
+O-------------------------------------------------------------O
+|                           09/17/14                          |
+O-------------------------------------------------------------O
