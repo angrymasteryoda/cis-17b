@@ -24,3 +24,19 @@ O-------------------------------------------------------------O
 O-------------------------------------------------------------O
 
 think of an project idea for a personal and group project
+
+O-------------------------------------------------------------O
+|                           09/10/14                          |
+O-------------------------------------------------------------O
+
+
+abstract
+    virtual 
+        function
+            fillarray
+base class
+    constructor
+    desconstructor
+    fillarray
+inherited
+    toString

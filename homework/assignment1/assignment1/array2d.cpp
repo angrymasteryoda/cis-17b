@@ -37,15 +37,9 @@ const char* Array2D::toString(){
     for( int r = 0; r < nRows; r++ ){
         ss << "<tr>";
         for( int c = 0; c < nCols; c++ ){
-            ss << "<td>" << array[r][c] << ",&nbsp;</td>";
-//            if( c != ( nCols - 1) ){
-//                ss << ", ";
-//            }
+            ss << "<td>" << array[r][c] << ",</td>";
         }
         ss << "</tr>";
-//        if( r != ( nRows - 1) ){
-//            ss << ", ";
-//        }
     }
     ss << "</table>";
     char* chars = new char[ ss.str().length() ];
