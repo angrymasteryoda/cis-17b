@@ -33,21 +33,21 @@ void Array2D::test(){
 
 const char* Array2D::toString(){
     stringstream ss;
-    ss << "[";
+    ss << "<table>";
     for( int r = 0; r < nRows; r++ ){
-        ss << " [";
+        ss << "<tr>";
         for( int c = 0; c < nCols; c++ ){
-            ss << array[r][c];
-            if( c != ( nCols - 1) ){
-                ss << ", ";
-            }
+            ss << "<td>" << array[r][c] << ",&nbsp;</td>";
+//            if( c != ( nCols - 1) ){
+//                ss << ", ";
+//            }
         }
-        ss << "]";
-        if( r != ( nRows - 1) ){
-            ss << ", ";
-        }
+        ss << "</tr>";
+//        if( r != ( nRows - 1) ){
+//            ss << ", ";
+//        }
     }
-    ss << " ]";
+    ss << "</table>";
     char* chars = new char[ ss.str().length() ];
     strcpy( chars, ss.str().c_str() );
     return chars;
