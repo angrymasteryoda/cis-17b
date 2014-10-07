@@ -92,6 +92,18 @@ O-------------------------------------------------------------O
         the cake is not a lie
 
 
+O-------------------------------------------------------------O
+|                           10/01/14                          |
+O-------------------------------------------------------------O
 
+
+dialog boxs
+login
+forgot password
+forgot username
+create an account
+contact info/issues/admin
+    report bug
+    
 
 

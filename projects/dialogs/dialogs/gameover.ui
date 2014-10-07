@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>GameOver</class>
+ <widget class="QDialog" name="GameOver">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>391</width>
+    <height>291</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Game Over</string>
+  </property>
+  <widget class="QWidget" name="verticalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>371</width>
+     <height>271</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QLabel" name="messageLabel">
+      <property name="text">
+       <string>&lt;html&gt;
+&lt;body style=&quot;padding: 0;margin:0;&quot;&gt;
+&lt;div style=&quot;background:green; text-align: center; line-height: 30px; font-family: cursive; font-size: 14pt; font-weight: 800;&quot;&gt;
+You Won!
+&lt;/div&gt;
+&lt;div style=&quot;background:red; text-align: center; line-height: 30px; font-family: cursive; font-size: 14pt; font-weight: 800;&quot;&gt;
+You Lost
+&lt;/div&gt;
+&lt;div style=&quot;background:white; text-align: center; line-height: 30px; font-family: cursive; font-size: 12pt;&quot;&gt;
+With a time of 00:00
+&lt;/div&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="margin">
+       <number>0</number>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QPushButton" name="retryButton">
+        <property name="text">
+         <string>Retry</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="playAgianButton">
+        <property name="text">
+         <string>Play Agian</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
