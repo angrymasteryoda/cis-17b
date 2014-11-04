@@ -105,5 +105,30 @@ create an account
 contact info/issues/admin
     report bug
     
+O-------------------------------------------------------------O
+|                           10/08/14                          |
+O-------------------------------------------------------------O
+
+for the apps
+rta bus times,
+talk to rta if they have an open api to get schedules
+need a way to pull the stuff off webadivisor for class 
+
+arcc mainly wants 
+the news and usefully stuff 
+    can create new stuff with updates
+
+leveling up
+    going to events
+    taking class
+    going places
+    
+goal for end of semester
+find your class
+account system
+
+
+
+    
 
 

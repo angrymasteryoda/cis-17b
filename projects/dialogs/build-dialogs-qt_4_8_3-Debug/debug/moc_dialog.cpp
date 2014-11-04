@@ -22,7 +22,7 @@ static const uint qt_meta_data_Dialog[] = {
        6,       // revision
        0,       // classname
        0,    0, // classinfo
-       3,   14, // methods
+       4,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -33,6 +33,7 @@ static const uint qt_meta_data_Dialog[] = {
        8,    7,    7,    7, 0x08,
       36,    7,    7,    7, 0x08,
       60,    7,    7,    7, 0x08,
+      84,    7,    7,    7, 0x08,
 
        0        // eod
 };
@@ -40,6 +41,7 @@ static const uint qt_meta_data_Dialog[] = {
 static const char qt_meta_stringdata_Dialog[] = {
     "Dialog\0\0on_gameOverButton_clicked()\0"
     "on_diffButton_clicked()\0on_saveButton_clicked()\0"
+    "on_cancelButton_clicked()\0"
 };
 
 void Dialog::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
@@ -51,6 +53,7 @@ void Dialog::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void
         case 0: _t->on_gameOverButton_clicked(); break;
         case 1: _t->on_diffButton_clicked(); break;
         case 2: _t->on_saveButton_clicked(); break;
+        case 3: _t->on_cancelButton_clicked(); break;
         default: ;
         }
     }
@@ -89,9 +92,9 @@ int Dialog::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 3)
+        if (_id < 4)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 3;
+        _id -= 4;
     }
     return _id;
 }

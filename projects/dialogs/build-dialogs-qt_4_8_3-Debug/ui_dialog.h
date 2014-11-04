@@ -16,6 +16,7 @@
 #include <QtGui/QDockWidget>
 #include <QtGui/QGridLayout>
 #include <QtGui/QHeaderView>
+#include <QtGui/QLabel>
 #include <QtGui/QPushButton>
 #include <QtGui/QWidget>
 
@@ -31,6 +32,7 @@ public:
     QPushButton *gameOverButton;
     QPushButton *saveButton;
     QPushButton *cancelButton;
+    QLabel *label;
 
     void setupUi(QDockWidget *Dialog)
     {
@@ -65,6 +67,14 @@ public:
 
         gridLayout->addWidget(cancelButton, 1, 1, 1, 1);
 
+        label = new QLabel(dockWidgetContents);
+        label->setObjectName(QString::fromUtf8("label"));
+        label->setGeometry(QRect(10, 0, 191, 16));
+        QFont font;
+        font.setFamily(QString::fromUtf8("Galactic Basic"));
+        font.setBold(true);
+        font.setWeight(75);
+        label->setFont(font);
         Dialog->setWidget(dockWidgetContents);
 
         retranslateUi(Dialog);
@@ -79,6 +89,7 @@ public:
         gameOverButton->setText(QApplication::translate("Dialog", "Game Over", 0, QApplication::UnicodeUTF8));
         saveButton->setText(QApplication::translate("Dialog", "Save", 0, QApplication::UnicodeUTF8));
         cancelButton->setText(QApplication::translate("Dialog", "Cancel", 0, QApplication::UnicodeUTF8));
+        label->setText(QApplication::translate("Dialog", "Good Luck Reading this", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };
