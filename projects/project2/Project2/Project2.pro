@@ -1,12 +1,16 @@
 SOURCES += \
     Main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    gamewindow.cpp
 
 FORMS += \
-    mainwindow.ui
+    mainwindow.ui \
+    gamewindow.ui
 
 HEADERS += \
-    mainwindow.h
+    mainwindow.h \
+    gamewindow.h
 
-OTHER_FILES += \
-    res/style.css
+RESOURCES += \
+    resources.qrc
+
