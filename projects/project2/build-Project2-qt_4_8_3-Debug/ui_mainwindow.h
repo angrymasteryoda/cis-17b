@@ -58,8 +58,10 @@ public:
         actionNew_Game->setObjectName(QString::fromUtf8("actionNew_Game"));
         actionSave = new QAction(MainWindow);
         actionSave->setObjectName(QString::fromUtf8("actionSave"));
+        actionSave->setEnabled(false);
         actionSaveExit = new QAction(MainWindow);
         actionSaveExit->setObjectName(QString::fromUtf8("actionSaveExit"));
+        actionSaveExit->setEnabled(false);
         actionExit = new QAction(MainWindow);
         actionExit->setObjectName(QString::fromUtf8("actionExit"));
         centralwidget = new QWidget(MainWindow);

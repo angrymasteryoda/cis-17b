@@ -26,6 +26,9 @@
       <height>40</height>
      </rect>
     </property>
+    <property name="maxLength">
+     <number>1</number>
+    </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
     </property>
@@ -38,6 +41,9 @@
       <width>40</width>
       <height>40</height>
      </rect>
+    </property>
+    <property name="maxLength">
+     <number>1</number>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -52,6 +58,9 @@
       <height>40</height>
      </rect>
     </property>
+    <property name="maxLength">
+     <number>1</number>
+    </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
     </property>
@@ -64,6 +73,9 @@
       <width>40</width>
       <height>40</height>
      </rect>
+    </property>
+    <property name="maxLength">
+     <number>1</number>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -78,6 +90,9 @@
       <height>40</height>
      </rect>
     </property>
+    <property name="maxLength">
+     <number>1</number>
+    </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
     </property>
@@ -90,6 +105,9 @@
       <width>40</width>
       <height>40</height>
      </rect>
+    </property>
+    <property name="maxLength">
+     <number>1</number>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -104,6 +122,9 @@
       <height>40</height>
      </rect>
     </property>
+    <property name="maxLength">
+     <number>1</number>
+    </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
     </property>
@@ -116,6 +137,9 @@
       <width>40</width>
       <height>40</height>
      </rect>
+    </property>
+    <property name="maxLength">
+     <number>1</number>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -130,6 +154,9 @@
       <height>40</height>
      </rect>
     </property>
+    <property name="maxLength">
+     <number>1</number>
+    </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
     </property>
@@ -142,6 +169,9 @@
       <width>40</width>
       <height>40</height>
      </rect>
+    </property>
+    <property name="maxLength">
+     <number>1</number>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -156,6 +186,9 @@
       <height>40</height>
      </rect>
     </property>
+    <property name="maxLength">
+     <number>1</number>
+    </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
     </property>
@@ -168,6 +201,9 @@
       <width>40</width>
       <height>40</height>
      </rect>
+    </property>
+    <property name="maxLength">
+     <number>1</number>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -182,6 +218,9 @@
       <height>40</height>
      </rect>
     </property>
+    <property name="maxLength">
+     <number>1</number>
+    </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
     </property>
@@ -194,6 +233,9 @@
       <width>40</width>
       <height>40</height>
      </rect>
+    </property>
+    <property name="maxLength">
+     <number>1</number>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -208,6 +250,9 @@
       <height>40</height>
      </rect>
     </property>
+    <property name="maxLength">
+     <number>1</number>
+    </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
     </property>
@@ -220,6 +265,9 @@
       <width>40</width>
       <height>40</height>
      </rect>
+    </property>
+    <property name="maxLength">
+     <number>1</number>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -234,6 +282,9 @@
       <height>40</height>
      </rect>
     </property>
+    <property name="maxLength">
+     <number>1</number>
+    </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
     </property>
@@ -246,6 +297,9 @@
       <width>40</width>
       <height>40</height>
      </rect>
+    </property>
+    <property name="maxLength">
+     <number>1</number>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -260,6 +314,9 @@
       <height>40</height>
      </rect>
     </property>
+    <property name="maxLength">
+     <number>1</number>
+    </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
     </property>
@@ -272,6 +329,9 @@
       <width>40</width>
       <height>40</height>
      </rect>
+    </property>
+    <property name="maxLength">
+     <number>1</number>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -286,6 +346,9 @@
       <height>40</height>
      </rect>
     </property>
+    <property name="maxLength">
+     <number>1</number>
+    </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
     </property>
@@ -298,6 +361,9 @@
       <width>40</width>
       <height>40</height>
      </rect>
+    </property>
+    <property name="maxLength">
+     <number>1</number>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -312,6 +378,9 @@
       <height>40</height>
      </rect>
     </property>
+    <property name="maxLength">
+     <number>1</number>
+    </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
     </property>
@@ -324,6 +393,9 @@
       <width>40</width>
       <height>40</height>
      </rect>
+    </property>
+    <property name="maxLength">
+     <number>1</number>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -338,6 +410,9 @@
       <height>40</height>
      </rect>
     </property>
+    <property name="maxLength">
+     <number>1</number>
+    </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
     </property>
@@ -350,6 +425,9 @@
       <width>40</width>
       <height>40</height>
      </rect>
+    </property>
+    <property name="maxLength">
+     <number>1</number>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -364,6 +442,9 @@
       <height>40</height>
      </rect>
     </property>
+    <property name="maxLength">
+     <number>1</number>
+    </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
     </property>
@@ -376,6 +457,9 @@
       <width>40</width>
       <height>40</height>
      </rect>
+    </property>
+    <property name="maxLength">
+     <number>1</number>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -390,6 +474,9 @@
       <height>40</height>
      </rect>
     </property>
+    <property name="maxLength">
+     <number>1</number>
+    </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
     </property>
@@ -402,6 +489,9 @@
       <width>40</width>
       <height>40</height>
      </rect>
+    </property>
+    <property name="maxLength">
+     <number>1</number>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -416,6 +506,9 @@
       <height>40</height>
      </rect>
     </property>
+    <property name="maxLength">
+     <number>1</number>
+    </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
     </property>
@@ -428,6 +521,9 @@
       <width>40</width>
       <height>40</height>
      </rect>
+    </property>
+    <property name="maxLength">
+     <number>1</number>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -442,6 +538,9 @@
       <height>40</height>
      </rect>
     </property>
+    <property name="maxLength">
+     <number>1</number>
+    </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
     </property>
@@ -454,6 +553,9 @@
       <width>40</width>
       <height>40</height>
      </rect>
+    </property>
+    <property name="maxLength">
+     <number>1</number>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -468,6 +570,9 @@
       <height>40</height>
      </rect>
     </property>
+    <property name="maxLength">
+     <number>1</number>
+    </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
     </property>
@@ -480,6 +585,9 @@
       <width>40</width>
       <height>40</height>
      </rect>
+    </property>
+    <property name="maxLength">
+     <number>1</number>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -494,6 +602,9 @@
       <height>40</height>
      </rect>
     </property>
+    <property name="maxLength">
+     <number>1</number>
+    </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
     </property>
@@ -506,6 +617,9 @@
       <width>40</width>
       <height>40</height>
      </rect>
+    </property>
+    <property name="maxLength">
+     <number>1</number>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -520,6 +634,9 @@
       <height>40</height>
      </rect>
     </property>
+    <property name="maxLength">
+     <number>1</number>
+    </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
     </property>
@@ -532,6 +649,9 @@
       <width>40</width>
       <height>40</height>
      </rect>
+    </property>
+    <property name="maxLength">
+     <number>1</number>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -546,6 +666,9 @@
       <height>40</height>
      </rect>
     </property>
+    <property name="maxLength">
+     <number>1</number>
+    </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
     </property>
@@ -558,6 +681,9 @@
       <width>40</width>
       <height>40</height>
      </rect>
+    </property>
+    <property name="maxLength">
+     <number>1</number>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -572,6 +698,9 @@
       <height>40</height>
      </rect>
     </property>
+    <property name="maxLength">
+     <number>1</number>
+    </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
     </property>
@@ -584,6 +713,9 @@
       <width>40</width>
       <height>40</height>
      </rect>
+    </property>
+    <property name="maxLength">
+     <number>1</number>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -598,6 +730,9 @@
       <height>40</height>
      </rect>
     </property>
+    <property name="maxLength">
+     <number>1</number>
+    </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
     </property>
@@ -610,6 +745,9 @@
       <width>40</width>
       <height>40</height>
      </rect>
+    </property>
+    <property name="maxLength">
+     <number>1</number>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -624,6 +762,9 @@
       <height>40</height>
      </rect>
     </property>
+    <property name="maxLength">
+     <number>1</number>
+    </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
     </property>
@@ -636,6 +777,9 @@
       <width>40</width>
       <height>40</height>
      </rect>
+    </property>
+    <property name="maxLength">
+     <number>1</number>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -650,6 +794,9 @@
       <height>40</height>
      </rect>
     </property>
+    <property name="maxLength">
+     <number>1</number>
+    </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
     </property>
@@ -662,6 +809,9 @@
       <width>40</width>
       <height>40</height>
      </rect>
+    </property>
+    <property name="maxLength">
+     <number>1</number>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -676,6 +826,9 @@
       <height>40</height>
      </rect>
     </property>
+    <property name="maxLength">
+     <number>1</number>
+    </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
     </property>
@@ -688,6 +841,9 @@
       <width>40</width>
       <height>40</height>
      </rect>
+    </property>
+    <property name="maxLength">
+     <number>1</number>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -702,6 +858,9 @@
       <height>40</height>
      </rect>
     </property>
+    <property name="maxLength">
+     <number>1</number>
+    </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
     </property>
@@ -714,6 +873,9 @@
       <width>40</width>
       <height>40</height>
      </rect>
+    </property>
+    <property name="maxLength">
+     <number>1</number>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -728,6 +890,9 @@
       <height>40</height>
      </rect>
     </property>
+    <property name="maxLength">
+     <number>1</number>
+    </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
     </property>
@@ -740,6 +905,9 @@
       <width>40</width>
       <height>40</height>
      </rect>
+    </property>
+    <property name="maxLength">
+     <number>1</number>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -754,6 +922,9 @@
       <height>40</height>
      </rect>
     </property>
+    <property name="maxLength">
+     <number>1</number>
+    </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
     </property>
@@ -766,6 +937,9 @@
       <width>40</width>
       <height>40</height>
      </rect>
+    </property>
+    <property name="maxLength">
+     <number>1</number>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -780,6 +954,9 @@
       <height>40</height>
      </rect>
     </property>
+    <property name="maxLength">
+     <number>1</number>
+    </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
     </property>
@@ -792,6 +969,9 @@
       <width>40</width>
       <height>40</height>
      </rect>
+    </property>
+    <property name="maxLength">
+     <number>1</number>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -806,6 +986,9 @@
       <height>40</height>
      </rect>
     </property>
+    <property name="maxLength">
+     <number>1</number>
+    </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
     </property>
@@ -818,6 +1001,9 @@
       <width>40</width>
       <height>40</height>
      </rect>
+    </property>
+    <property name="maxLength">
+     <number>1</number>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -832,6 +1018,9 @@
       <height>40</height>
      </rect>
     </property>
+    <property name="maxLength">
+     <number>1</number>
+    </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
     </property>
@@ -844,6 +1033,9 @@
       <width>40</width>
       <height>40</height>
      </rect>
+    </property>
+    <property name="maxLength">
+     <number>1</number>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -858,6 +1050,9 @@
       <height>40</height>
      </rect>
     </property>
+    <property name="maxLength">
+     <number>1</number>
+    </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
     </property>
@@ -870,6 +1065,9 @@
       <width>40</width>
       <height>40</height>
      </rect>
+    </property>
+    <property name="maxLength">
+     <number>1</number>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -884,6 +1082,9 @@
       <height>40</height>
      </rect>
     </property>
+    <property name="maxLength">
+     <number>1</number>
+    </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
     </property>
@@ -896,6 +1097,9 @@
       <width>40</width>
       <height>40</height>
      </rect>
+    </property>
+    <property name="maxLength">
+     <number>1</number>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -910,6 +1114,9 @@
       <height>40</height>
      </rect>
     </property>
+    <property name="maxLength">
+     <number>1</number>
+    </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
     </property>
@@ -922,6 +1129,9 @@
       <width>40</width>
       <height>40</height>
      </rect>
+    </property>
+    <property name="maxLength">
+     <number>1</number>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -936,6 +1146,9 @@
       <height>40</height>
      </rect>
     </property>
+    <property name="maxLength">
+     <number>1</number>
+    </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
     </property>
@@ -948,6 +1161,9 @@
       <width>40</width>
       <height>40</height>
      </rect>
+    </property>
+    <property name="maxLength">
+     <number>1</number>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -962,6 +1178,9 @@
       <height>40</height>
      </rect>
     </property>
+    <property name="maxLength">
+     <number>1</number>
+    </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
     </property>
@@ -974,6 +1193,9 @@
       <width>40</width>
       <height>40</height>
      </rect>
+    </property>
+    <property name="maxLength">
+     <number>1</number>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -988,6 +1210,9 @@
       <height>40</height>
      </rect>
     </property>
+    <property name="maxLength">
+     <number>1</number>
+    </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
     </property>
@@ -1000,6 +1225,9 @@
       <width>40</width>
       <height>40</height>
      </rect>
+    </property>
+    <property name="maxLength">
+     <number>1</number>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -1014,6 +1242,9 @@
       <height>40</height>
      </rect>
     </property>
+    <property name="maxLength">
+     <number>1</number>
+    </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
     </property>
@@ -1026,6 +1257,9 @@
       <width>40</width>
       <height>40</height>
      </rect>
+    </property>
+    <property name="maxLength">
+     <number>1</number>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -1040,6 +1274,9 @@
       <height>40</height>
      </rect>
     </property>
+    <property name="maxLength">
+     <number>1</number>
+    </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
     </property>
@@ -1053,6 +1290,9 @@
       <height>40</height>
      </rect>
     </property>
+    <property name="maxLength">
+     <number>1</number>
+    </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
     </property>
@@ -1065,6 +1305,9 @@
       <width>40</width>
       <height>40</height>
      </rect>
+    </property>
+    <property name="maxLength">
+     <number>1</number>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -1235,10 +1478,35 @@
     <property name="title">
      <string>File</string>
     </property>
+    <addaction name="actionNew_Game"/>
+    <addaction name="actionSave"/>
+    <addaction name="separator"/>
+    <addaction name="actionSave_and_Exit"/>
+    <addaction name="actionExit"/>
    </widget>
    <addaction name="menuFile"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionNew_Game">
+   <property name="text">
+    <string>New Game</string>
+   </property>
+  </action>
+  <action name="actionSave">
+   <property name="text">
+    <string>Save</string>
+   </property>
+  </action>
+  <action name="actionSave_and_Exit">
+   <property name="text">
+    <string>Save and Exit</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </action>
  </widget>
  <tabstops>
   <tabstop>cell_0_0</tabstop>

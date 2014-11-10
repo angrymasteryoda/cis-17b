@@ -18,6 +18,10 @@ public:
 private slots:
     void on_newButton_clicked();
 
+    void on_howtoButton_clicked();
+
+    void on_actionNew_Game_triggered();
+
 private:
     Ui::MainWindow *ui;
 };

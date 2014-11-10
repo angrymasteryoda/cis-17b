@@ -16,13 +16,14 @@ public:
     ~GameWindow();
 
 private slots:
-//    void on_mainMenu_clicked();
-
-//    void on_mainMenuButton_clicked();
-
     void on_backButton_clicked();
 
 private:
+    int *gameMatrix;
+
+    void initGame();
+    void print();
+
     Ui::GameWindow *ui;
 };
 
