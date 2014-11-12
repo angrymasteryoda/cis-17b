@@ -6,10 +6,13 @@
 #include <QTextStream>
 #include <QString>
 #include <QDebug>
+#include <cstdlib>
+#include <ctime>
 
 
 int main(int argc, char *argv[]) {
     QApplication app(argc, argv);
+    srand( time(NULL) );
 
     //set looks
     QFile File(":/res/css/style.css");

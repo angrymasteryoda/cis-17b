@@ -32,6 +32,7 @@ public:
     QAction *actionSave;
     QAction *actionSave_and_Exit;
     QAction *actionExit;
+    QAction *actionHow_To_Play;
     QWidget *centralwidget;
     QLineEdit *cell_0_0;
     QLineEdit *cell_0_1;
@@ -121,6 +122,7 @@ public:
     QPushButton *backButton;
     QMenuBar *menubar;
     QMenu *menuFile;
+    QMenu *menuHelp;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *GameWindow)
@@ -137,6 +139,8 @@ public:
         actionSave_and_Exit->setObjectName(QString::fromUtf8("actionSave_and_Exit"));
         actionExit = new QAction(GameWindow);
         actionExit->setObjectName(QString::fromUtf8("actionExit"));
+        actionHow_To_Play = new QAction(GameWindow);
+        actionHow_To_Play->setObjectName(QString::fromUtf8("actionHow_To_Play"));
         centralwidget = new QWidget(GameWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         cell_0_0 = new QLineEdit(centralwidget);
@@ -659,6 +663,8 @@ public:
         menubar->setGeometry(QRect(0, 0, 562, 21));
         menuFile = new QMenu(menubar);
         menuFile->setObjectName(QString::fromUtf8("menuFile"));
+        menuHelp = new QMenu(menubar);
+        menuHelp->setObjectName(QString::fromUtf8("menuHelp"));
         GameWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(GameWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
@@ -745,11 +751,13 @@ public:
         QWidget::setTabOrder(cell_8_7, cell_8_8);
 
         menubar->addAction(menuFile->menuAction());
+        menubar->addAction(menuHelp->menuAction());
         menuFile->addAction(actionNew_Game);
         menuFile->addAction(actionSave);
         menuFile->addSeparator();
         menuFile->addAction(actionSave_and_Exit);
         menuFile->addAction(actionExit);
+        menuHelp->addAction(actionHow_To_Play);
 
         retranslateUi(GameWindow);
 
@@ -763,8 +771,10 @@ public:
         actionSave->setText(QApplication::translate("GameWindow", "Save", 0, QApplication::UnicodeUTF8));
         actionSave_and_Exit->setText(QApplication::translate("GameWindow", "Save and Exit", 0, QApplication::UnicodeUTF8));
         actionExit->setText(QApplication::translate("GameWindow", "Exit", 0, QApplication::UnicodeUTF8));
+        actionHow_To_Play->setText(QApplication::translate("GameWindow", "How To Play", 0, QApplication::UnicodeUTF8));
         backButton->setText(QApplication::translate("GameWindow", "Main Menu", 0, QApplication::UnicodeUTF8));
         menuFile->setTitle(QApplication::translate("GameWindow", "File", 0, QApplication::UnicodeUTF8));
+        menuHelp->setTitle(QApplication::translate("GameWindow", "Help", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };

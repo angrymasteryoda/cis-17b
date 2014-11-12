@@ -17,3 +17,6 @@ HEADERS += \
 RESOURCES += \
     resources.qrc
 
+OTHER_FILES += \
+    cellGen.js
+
