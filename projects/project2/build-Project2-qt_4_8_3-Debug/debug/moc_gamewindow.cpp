@@ -32,133 +32,133 @@ static const uint qt_meta_data_GameWindow[] = {
  // slots: signature, parameters, type, tag, flags
       12,   11,   11,   11, 0x08,
       36,   11,   11,   11, 0x08,
-      55,   11,   11,   11, 0x08,
-      74,   11,   11,   11, 0x08,
-      93,   11,   11,   11, 0x08,
-     112,   11,   11,   11, 0x08,
-     131,   11,   11,   11, 0x08,
-     150,   11,   11,   11, 0x08,
-     169,   11,   11,   11, 0x08,
-     188,   11,   11,   11, 0x08,
-     207,   11,   11,   11, 0x08,
-     226,   11,   11,   11, 0x08,
-     245,   11,   11,   11, 0x08,
-     264,   11,   11,   11, 0x08,
-     283,   11,   11,   11, 0x08,
-     302,   11,   11,   11, 0x08,
-     321,   11,   11,   11, 0x08,
+      52,   11,   11,   11, 0x08,
+      68,   11,   11,   11, 0x08,
+      84,   11,   11,   11, 0x08,
+     100,   11,   11,   11, 0x08,
+     116,   11,   11,   11, 0x08,
+     132,   11,   11,   11, 0x08,
+     148,   11,   11,   11, 0x08,
+     164,   11,   11,   11, 0x08,
+     180,   11,   11,   11, 0x08,
+     196,   11,   11,   11, 0x08,
+     212,   11,   11,   11, 0x08,
+     228,   11,   11,   11, 0x08,
+     244,   11,   11,   11, 0x08,
+     260,   11,   11,   11, 0x08,
+     276,   11,   11,   11, 0x08,
+     292,   11,   11,   11, 0x08,
+     308,   11,   11,   11, 0x08,
+     324,   11,   11,   11, 0x08,
      340,   11,   11,   11, 0x08,
-     359,   11,   11,   11, 0x08,
-     378,   11,   11,   11, 0x08,
-     397,   11,   11,   11, 0x08,
-     416,   11,   11,   11, 0x08,
-     435,   11,   11,   11, 0x08,
-     454,   11,   11,   11, 0x08,
-     473,   11,   11,   11, 0x08,
-     492,   11,   11,   11, 0x08,
-     511,   11,   11,   11, 0x08,
-     530,   11,   11,   11, 0x08,
-     549,   11,   11,   11, 0x08,
-     568,   11,   11,   11, 0x08,
-     587,   11,   11,   11, 0x08,
-     606,   11,   11,   11, 0x08,
-     625,   11,   11,   11, 0x08,
+     356,   11,   11,   11, 0x08,
+     372,   11,   11,   11, 0x08,
+     388,   11,   11,   11, 0x08,
+     404,   11,   11,   11, 0x08,
+     420,   11,   11,   11, 0x08,
+     436,   11,   11,   11, 0x08,
+     452,   11,   11,   11, 0x08,
+     468,   11,   11,   11, 0x08,
+     484,   11,   11,   11, 0x08,
+     500,   11,   11,   11, 0x08,
+     516,   11,   11,   11, 0x08,
+     532,   11,   11,   11, 0x08,
+     548,   11,   11,   11, 0x08,
+     564,   11,   11,   11, 0x08,
+     580,   11,   11,   11, 0x08,
+     596,   11,   11,   11, 0x08,
+     612,   11,   11,   11, 0x08,
+     628,   11,   11,   11, 0x08,
      644,   11,   11,   11, 0x08,
-     663,   11,   11,   11, 0x08,
-     682,   11,   11,   11, 0x08,
-     701,   11,   11,   11, 0x08,
-     720,   11,   11,   11, 0x08,
-     739,   11,   11,   11, 0x08,
-     758,   11,   11,   11, 0x08,
-     777,   11,   11,   11, 0x08,
-     796,   11,   11,   11, 0x08,
-     815,   11,   11,   11, 0x08,
-     834,   11,   11,   11, 0x08,
-     853,   11,   11,   11, 0x08,
-     872,   11,   11,   11, 0x08,
-     891,   11,   11,   11, 0x08,
-     910,   11,   11,   11, 0x08,
-     929,   11,   11,   11, 0x08,
+     660,   11,   11,   11, 0x08,
+     676,   11,   11,   11, 0x08,
+     692,   11,   11,   11, 0x08,
+     708,   11,   11,   11, 0x08,
+     724,   11,   11,   11, 0x08,
+     740,   11,   11,   11, 0x08,
+     756,   11,   11,   11, 0x08,
+     772,   11,   11,   11, 0x08,
+     788,   11,   11,   11, 0x08,
+     804,   11,   11,   11, 0x08,
+     820,   11,   11,   11, 0x08,
+     836,   11,   11,   11, 0x08,
+     852,   11,   11,   11, 0x08,
+     868,   11,   11,   11, 0x08,
+     884,   11,   11,   11, 0x08,
+     900,   11,   11,   11, 0x08,
+     916,   11,   11,   11, 0x08,
+     932,   11,   11,   11, 0x08,
      948,   11,   11,   11, 0x08,
-     967,   11,   11,   11, 0x08,
-     986,   11,   11,   11, 0x08,
-    1005,   11,   11,   11, 0x08,
-    1024,   11,   11,   11, 0x08,
-    1043,   11,   11,   11, 0x08,
-    1062,   11,   11,   11, 0x08,
-    1081,   11,   11,   11, 0x08,
-    1100,   11,   11,   11, 0x08,
-    1119,   11,   11,   11, 0x08,
-    1138,   11,   11,   11, 0x08,
-    1157,   11,   11,   11, 0x08,
-    1176,   11,   11,   11, 0x08,
-    1195,   11,   11,   11, 0x08,
-    1214,   11,   11,   11, 0x08,
-    1233,   11,   11,   11, 0x08,
+     964,   11,   11,   11, 0x08,
+     980,   11,   11,   11, 0x08,
+     996,   11,   11,   11, 0x08,
+    1012,   11,   11,   11, 0x08,
+    1028,   11,   11,   11, 0x08,
+    1044,   11,   11,   11, 0x08,
+    1060,   11,   11,   11, 0x08,
+    1076,   11,   11,   11, 0x08,
+    1092,   11,   11,   11, 0x08,
+    1108,   11,   11,   11, 0x08,
+    1124,   11,   11,   11, 0x08,
+    1140,   11,   11,   11, 0x08,
+    1156,   11,   11,   11, 0x08,
+    1172,   11,   11,   11, 0x08,
+    1188,   11,   11,   11, 0x08,
+    1204,   11,   11,   11, 0x08,
+    1220,   11,   11,   11, 0x08,
+    1236,   11,   11,   11, 0x08,
     1252,   11,   11,   11, 0x08,
-    1271,   11,   11,   11, 0x08,
-    1290,   11,   11,   11, 0x08,
-    1309,   11,   11,   11, 0x08,
-    1328,   11,   11,   11, 0x08,
-    1347,   11,   11,   11, 0x08,
-    1366,   11,   11,   11, 0x08,
-    1385,   11,   11,   11, 0x08,
-    1404,   11,   11,   11, 0x08,
-    1423,   11,   11,   11, 0x08,
-    1442,   11,   11,   11, 0x08,
-    1461,   11,   11,   11, 0x08,
-    1480,   11,   11,   11, 0x08,
-    1499,   11,   11,   11, 0x08,
-    1518,   11,   11,   11, 0x08,
-    1537,   11,   11,   11, 0x08,
-    1556,   11,   11,   11, 0x08,
+    1268,   11,   11,   11, 0x08,
+    1284,   11,   11,   11, 0x08,
+    1300,   11,   11,   11, 0x08,
+    1316,   11,   11,   11, 0x08,
 
        0        // eod
 };
 
 static const char qt_meta_stringdata_GameWindow[] = {
     "GameWindow\0\0on_backButton_clicked()\0"
-    "on_cell_0_0_blur()\0on_cell_0_1_blur()\0"
-    "on_cell_0_2_blur()\0on_cell_0_3_blur()\0"
-    "on_cell_0_4_blur()\0on_cell_0_5_blur()\0"
-    "on_cell_0_6_blur()\0on_cell_0_7_blur()\0"
-    "on_cell_0_8_blur()\0on_cell_1_0_blur()\0"
-    "on_cell_1_1_blur()\0on_cell_1_2_blur()\0"
-    "on_cell_1_3_blur()\0on_cell_1_4_blur()\0"
-    "on_cell_1_5_blur()\0on_cell_1_6_blur()\0"
-    "on_cell_1_7_blur()\0on_cell_1_8_blur()\0"
-    "on_cell_2_0_blur()\0on_cell_2_1_blur()\0"
-    "on_cell_2_2_blur()\0on_cell_2_3_blur()\0"
-    "on_cell_2_4_blur()\0on_cell_2_5_blur()\0"
-    "on_cell_2_6_blur()\0on_cell_2_7_blur()\0"
-    "on_cell_2_8_blur()\0on_cell_3_0_blur()\0"
-    "on_cell_3_1_blur()\0on_cell_3_2_blur()\0"
-    "on_cell_3_3_blur()\0on_cell_3_4_blur()\0"
-    "on_cell_3_5_blur()\0on_cell_3_6_blur()\0"
-    "on_cell_3_7_blur()\0on_cell_3_8_blur()\0"
-    "on_cell_4_0_blur()\0on_cell_4_1_blur()\0"
-    "on_cell_4_2_blur()\0on_cell_4_3_blur()\0"
-    "on_cell_4_4_blur()\0on_cell_4_5_blur()\0"
-    "on_cell_4_6_blur()\0on_cell_4_7_blur()\0"
-    "on_cell_4_8_blur()\0on_cell_5_0_blur()\0"
-    "on_cell_5_1_blur()\0on_cell_5_2_blur()\0"
-    "on_cell_5_3_blur()\0on_cell_5_4_blur()\0"
-    "on_cell_5_5_blur()\0on_cell_5_6_blur()\0"
-    "on_cell_5_7_blur()\0on_cell_5_8_blur()\0"
-    "on_cell_6_0_blur()\0on_cell_6_1_blur()\0"
-    "on_cell_6_2_blur()\0on_cell_6_3_blur()\0"
-    "on_cell_6_4_blur()\0on_cell_6_5_blur()\0"
-    "on_cell_6_6_blur()\0on_cell_6_7_blur()\0"
-    "on_cell_6_8_blur()\0on_cell_7_0_blur()\0"
-    "on_cell_7_1_blur()\0on_cell_7_2_blur()\0"
-    "on_cell_7_3_blur()\0on_cell_7_4_blur()\0"
-    "on_cell_7_5_blur()\0on_cell_7_6_blur()\0"
-    "on_cell_7_7_blur()\0on_cell_7_8_blur()\0"
-    "on_cell_8_0_blur()\0on_cell_8_1_blur()\0"
-    "on_cell_8_2_blur()\0on_cell_8_3_blur()\0"
-    "on_cell_8_4_blur()\0on_cell_8_5_blur()\0"
-    "on_cell_8_6_blur()\0on_cell_8_7_blur()\0"
-    "on_cell_8_8_blur()\0"
+    "cell_0_0_blur()\0cell_0_1_blur()\0"
+    "cell_0_2_blur()\0cell_0_3_blur()\0"
+    "cell_0_4_blur()\0cell_0_5_blur()\0"
+    "cell_0_6_blur()\0cell_0_7_blur()\0"
+    "cell_0_8_blur()\0cell_1_0_blur()\0"
+    "cell_1_1_blur()\0cell_1_2_blur()\0"
+    "cell_1_3_blur()\0cell_1_4_blur()\0"
+    "cell_1_5_blur()\0cell_1_6_blur()\0"
+    "cell_1_7_blur()\0cell_1_8_blur()\0"
+    "cell_2_0_blur()\0cell_2_1_blur()\0"
+    "cell_2_2_blur()\0cell_2_3_blur()\0"
+    "cell_2_4_blur()\0cell_2_5_blur()\0"
+    "cell_2_6_blur()\0cell_2_7_blur()\0"
+    "cell_2_8_blur()\0cell_3_0_blur()\0"
+    "cell_3_1_blur()\0cell_3_2_blur()\0"
+    "cell_3_3_blur()\0cell_3_4_blur()\0"
+    "cell_3_5_blur()\0cell_3_6_blur()\0"
+    "cell_3_7_blur()\0cell_3_8_blur()\0"
+    "cell_4_0_blur()\0cell_4_1_blur()\0"
+    "cell_4_2_blur()\0cell_4_3_blur()\0"
+    "cell_4_4_blur()\0cell_4_5_blur()\0"
+    "cell_4_6_blur()\0cell_4_7_blur()\0"
+    "cell_4_8_blur()\0cell_5_0_blur()\0"
+    "cell_5_1_blur()\0cell_5_2_blur()\0"
+    "cell_5_3_blur()\0cell_5_4_blur()\0"
+    "cell_5_5_blur()\0cell_5_6_blur()\0"
+    "cell_5_7_blur()\0cell_5_8_blur()\0"
+    "cell_6_0_blur()\0cell_6_1_blur()\0"
+    "cell_6_2_blur()\0cell_6_3_blur()\0"
+    "cell_6_4_blur()\0cell_6_5_blur()\0"
+    "cell_6_6_blur()\0cell_6_7_blur()\0"
+    "cell_6_8_blur()\0cell_7_0_blur()\0"
+    "cell_7_1_blur()\0cell_7_2_blur()\0"
+    "cell_7_3_blur()\0cell_7_4_blur()\0"
+    "cell_7_5_blur()\0cell_7_6_blur()\0"
+    "cell_7_7_blur()\0cell_7_8_blur()\0"
+    "cell_8_0_blur()\0cell_8_1_blur()\0"
+    "cell_8_2_blur()\0cell_8_3_blur()\0"
+    "cell_8_4_blur()\0cell_8_5_blur()\0"
+    "cell_8_6_blur()\0cell_8_7_blur()\0"
+    "cell_8_8_blur()\0"
 };
 
 void GameWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
@@ -168,87 +168,87 @@ void GameWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         GameWindow *_t = static_cast<GameWindow *>(_o);
         switch (_id) {
         case 0: _t->on_backButton_clicked(); break;
-        case 1: _t->on_cell_0_0_blur(); break;
-        case 2: _t->on_cell_0_1_blur(); break;
-        case 3: _t->on_cell_0_2_blur(); break;
-        case 4: _t->on_cell_0_3_blur(); break;
-        case 5: _t->on_cell_0_4_blur(); break;
-        case 6: _t->on_cell_0_5_blur(); break;
-        case 7: _t->on_cell_0_6_blur(); break;
-        case 8: _t->on_cell_0_7_blur(); break;
-        case 9: _t->on_cell_0_8_blur(); break;
-        case 10: _t->on_cell_1_0_blur(); break;
-        case 11: _t->on_cell_1_1_blur(); break;
-        case 12: _t->on_cell_1_2_blur(); break;
-        case 13: _t->on_cell_1_3_blur(); break;
-        case 14: _t->on_cell_1_4_blur(); break;
-        case 15: _t->on_cell_1_5_blur(); break;
-        case 16: _t->on_cell_1_6_blur(); break;
-        case 17: _t->on_cell_1_7_blur(); break;
-        case 18: _t->on_cell_1_8_blur(); break;
-        case 19: _t->on_cell_2_0_blur(); break;
-        case 20: _t->on_cell_2_1_blur(); break;
-        case 21: _t->on_cell_2_2_blur(); break;
-        case 22: _t->on_cell_2_3_blur(); break;
-        case 23: _t->on_cell_2_4_blur(); break;
-        case 24: _t->on_cell_2_5_blur(); break;
-        case 25: _t->on_cell_2_6_blur(); break;
-        case 26: _t->on_cell_2_7_blur(); break;
-        case 27: _t->on_cell_2_8_blur(); break;
-        case 28: _t->on_cell_3_0_blur(); break;
-        case 29: _t->on_cell_3_1_blur(); break;
-        case 30: _t->on_cell_3_2_blur(); break;
-        case 31: _t->on_cell_3_3_blur(); break;
-        case 32: _t->on_cell_3_4_blur(); break;
-        case 33: _t->on_cell_3_5_blur(); break;
-        case 34: _t->on_cell_3_6_blur(); break;
-        case 35: _t->on_cell_3_7_blur(); break;
-        case 36: _t->on_cell_3_8_blur(); break;
-        case 37: _t->on_cell_4_0_blur(); break;
-        case 38: _t->on_cell_4_1_blur(); break;
-        case 39: _t->on_cell_4_2_blur(); break;
-        case 40: _t->on_cell_4_3_blur(); break;
-        case 41: _t->on_cell_4_4_blur(); break;
-        case 42: _t->on_cell_4_5_blur(); break;
-        case 43: _t->on_cell_4_6_blur(); break;
-        case 44: _t->on_cell_4_7_blur(); break;
-        case 45: _t->on_cell_4_8_blur(); break;
-        case 46: _t->on_cell_5_0_blur(); break;
-        case 47: _t->on_cell_5_1_blur(); break;
-        case 48: _t->on_cell_5_2_blur(); break;
-        case 49: _t->on_cell_5_3_blur(); break;
-        case 50: _t->on_cell_5_4_blur(); break;
-        case 51: _t->on_cell_5_5_blur(); break;
-        case 52: _t->on_cell_5_6_blur(); break;
-        case 53: _t->on_cell_5_7_blur(); break;
-        case 54: _t->on_cell_5_8_blur(); break;
-        case 55: _t->on_cell_6_0_blur(); break;
-        case 56: _t->on_cell_6_1_blur(); break;
-        case 57: _t->on_cell_6_2_blur(); break;
-        case 58: _t->on_cell_6_3_blur(); break;
-        case 59: _t->on_cell_6_4_blur(); break;
-        case 60: _t->on_cell_6_5_blur(); break;
-        case 61: _t->on_cell_6_6_blur(); break;
-        case 62: _t->on_cell_6_7_blur(); break;
-        case 63: _t->on_cell_6_8_blur(); break;
-        case 64: _t->on_cell_7_0_blur(); break;
-        case 65: _t->on_cell_7_1_blur(); break;
-        case 66: _t->on_cell_7_2_blur(); break;
-        case 67: _t->on_cell_7_3_blur(); break;
-        case 68: _t->on_cell_7_4_blur(); break;
-        case 69: _t->on_cell_7_5_blur(); break;
-        case 70: _t->on_cell_7_6_blur(); break;
-        case 71: _t->on_cell_7_7_blur(); break;
-        case 72: _t->on_cell_7_8_blur(); break;
-        case 73: _t->on_cell_8_0_blur(); break;
-        case 74: _t->on_cell_8_1_blur(); break;
-        case 75: _t->on_cell_8_2_blur(); break;
-        case 76: _t->on_cell_8_3_blur(); break;
-        case 77: _t->on_cell_8_4_blur(); break;
-        case 78: _t->on_cell_8_5_blur(); break;
-        case 79: _t->on_cell_8_6_blur(); break;
-        case 80: _t->on_cell_8_7_blur(); break;
-        case 81: _t->on_cell_8_8_blur(); break;
+        case 1: _t->cell_0_0_blur(); break;
+        case 2: _t->cell_0_1_blur(); break;
+        case 3: _t->cell_0_2_blur(); break;
+        case 4: _t->cell_0_3_blur(); break;
+        case 5: _t->cell_0_4_blur(); break;
+        case 6: _t->cell_0_5_blur(); break;
+        case 7: _t->cell_0_6_blur(); break;
+        case 8: _t->cell_0_7_blur(); break;
+        case 9: _t->cell_0_8_blur(); break;
+        case 10: _t->cell_1_0_blur(); break;
+        case 11: _t->cell_1_1_blur(); break;
+        case 12: _t->cell_1_2_blur(); break;
+        case 13: _t->cell_1_3_blur(); break;
+        case 14: _t->cell_1_4_blur(); break;
+        case 15: _t->cell_1_5_blur(); break;
+        case 16: _t->cell_1_6_blur(); break;
+        case 17: _t->cell_1_7_blur(); break;
+        case 18: _t->cell_1_8_blur(); break;
+        case 19: _t->cell_2_0_blur(); break;
+        case 20: _t->cell_2_1_blur(); break;
+        case 21: _t->cell_2_2_blur(); break;
+        case 22: _t->cell_2_3_blur(); break;
+        case 23: _t->cell_2_4_blur(); break;
+        case 24: _t->cell_2_5_blur(); break;
+        case 25: _t->cell_2_6_blur(); break;
+        case 26: _t->cell_2_7_blur(); break;
+        case 27: _t->cell_2_8_blur(); break;
+        case 28: _t->cell_3_0_blur(); break;
+        case 29: _t->cell_3_1_blur(); break;
+        case 30: _t->cell_3_2_blur(); break;
+        case 31: _t->cell_3_3_blur(); break;
+        case 32: _t->cell_3_4_blur(); break;
+        case 33: _t->cell_3_5_blur(); break;
+        case 34: _t->cell_3_6_blur(); break;
+        case 35: _t->cell_3_7_blur(); break;
+        case 36: _t->cell_3_8_blur(); break;
+        case 37: _t->cell_4_0_blur(); break;
+        case 38: _t->cell_4_1_blur(); break;
+        case 39: _t->cell_4_2_blur(); break;
+        case 40: _t->cell_4_3_blur(); break;
+        case 41: _t->cell_4_4_blur(); break;
+        case 42: _t->cell_4_5_blur(); break;
+        case 43: _t->cell_4_6_blur(); break;
+        case 44: _t->cell_4_7_blur(); break;
+        case 45: _t->cell_4_8_blur(); break;
+        case 46: _t->cell_5_0_blur(); break;
+        case 47: _t->cell_5_1_blur(); break;
+        case 48: _t->cell_5_2_blur(); break;
+        case 49: _t->cell_5_3_blur(); break;
+        case 50: _t->cell_5_4_blur(); break;
+        case 51: _t->cell_5_5_blur(); break;
+        case 52: _t->cell_5_6_blur(); break;
+        case 53: _t->cell_5_7_blur(); break;
+        case 54: _t->cell_5_8_blur(); break;
+        case 55: _t->cell_6_0_blur(); break;
+        case 56: _t->cell_6_1_blur(); break;
+        case 57: _t->cell_6_2_blur(); break;
+        case 58: _t->cell_6_3_blur(); break;
+        case 59: _t->cell_6_4_blur(); break;
+        case 60: _t->cell_6_5_blur(); break;
+        case 61: _t->cell_6_6_blur(); break;
+        case 62: _t->cell_6_7_blur(); break;
+        case 63: _t->cell_6_8_blur(); break;
+        case 64: _t->cell_7_0_blur(); break;
+        case 65: _t->cell_7_1_blur(); break;
+        case 66: _t->cell_7_2_blur(); break;
+        case 67: _t->cell_7_3_blur(); break;
+        case 68: _t->cell_7_4_blur(); break;
+        case 69: _t->cell_7_5_blur(); break;
+        case 70: _t->cell_7_6_blur(); break;
+        case 71: _t->cell_7_7_blur(); break;
+        case 72: _t->cell_7_8_blur(); break;
+        case 73: _t->cell_8_0_blur(); break;
+        case 74: _t->cell_8_1_blur(); break;
+        case 75: _t->cell_8_2_blur(); break;
+        case 76: _t->cell_8_3_blur(); break;
+        case 77: _t->cell_8_4_blur(); break;
+        case 78: _t->cell_8_5_blur(); break;
+        case 79: _t->cell_8_6_blur(); break;
+        case 80: _t->cell_8_7_blur(); break;
+        case 81: _t->cell_8_8_blur(); break;
         default: ;
         }
     }

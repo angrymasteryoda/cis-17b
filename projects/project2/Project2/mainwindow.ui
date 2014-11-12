@@ -101,6 +101,11 @@
       <string>Hard</string>
      </property>
     </item>
+    <item>
+     <property name="text">
+      <string>Insane</string>
+     </property>
+    </item>
    </widget>
    <widget class="QPushButton" name="howtoButton">
     <property name="geometry">

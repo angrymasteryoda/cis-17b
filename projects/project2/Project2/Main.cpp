@@ -9,6 +9,7 @@
 #include <cstdlib>
 #include <ctime>
 
+int random( int max, int min = 0 );
 
 int main(int argc, char *argv[]) {
     QApplication app(argc, argv);

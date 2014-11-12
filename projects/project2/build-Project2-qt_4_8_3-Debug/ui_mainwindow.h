@@ -128,6 +128,7 @@ public:
          << QApplication::translate("MainWindow", "Easy", 0, QApplication::UnicodeUTF8)
          << QApplication::translate("MainWindow", "Medium", 0, QApplication::UnicodeUTF8)
          << QApplication::translate("MainWindow", "Hard", 0, QApplication::UnicodeUTF8)
+         << QApplication::translate("MainWindow", "Insane", 0, QApplication::UnicodeUTF8)
         );
         howtoButton->setText(QApplication::translate("MainWindow", "How to Play", 0, QApplication::UnicodeUTF8));
         menuFile->setTitle(QApplication::translate("MainWindow", "File", 0, QApplication::UnicodeUTF8));

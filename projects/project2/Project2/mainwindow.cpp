@@ -3,6 +3,7 @@
 
 #include "gamewindow.h"
 #include "howtodialog.h"
+#include <QtCore>
 
 MainWindow::MainWindow( QWidget *parent ) : QMainWindow( parent ), ui( new Ui::MainWindow ) {
     ui->setupUi(this);
@@ -14,7 +15,7 @@ MainWindow::~MainWindow()
 }
 
 void MainWindow::on_newButton_clicked() {
-    GameWindow *game = new GameWindow;
+    GameWindow *game = new GameWindow( 0, ui->difficultyCombo->currentIndex() );
     game->show();
     this->close();
 }

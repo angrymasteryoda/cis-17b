@@ -283,7 +283,6 @@ void GameWindow::showNumbers(){
        mask[i] = gameMatrix[i];
     }
 
-
     for( int i = 0; i < 3; i++){
         for( int j = 0; j < 3; j++ ){
             //for each 3x3 square hide 5 numbers
@@ -321,7 +320,6 @@ void GameWindow::showNumbers(){
             }
         }
     }
-
 }
 
 /**
