@@ -99,6 +99,8 @@ private slots:
     void cell_8_6_blur();
     void cell_8_7_blur();
     void cell_8_8_blur();
+    void showHelp();
+    void newGame();
 
 private:
     int level;

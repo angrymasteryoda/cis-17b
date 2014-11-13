@@ -14,6 +14,7 @@
 #include <QtGui/QApplication>
 #include <QtGui/QButtonGroup>
 #include <QtGui/QComboBox>
+#include <QtGui/QGridLayout>
 #include <QtGui/QHeaderView>
 #include <QtGui/QLabel>
 #include <QtGui/QMainWindow>
@@ -34,9 +35,11 @@ public:
     QAction *actionExit;
     QWidget *centralwidget;
     QLabel *titleLabel;
+    QWidget *gridLayoutWidget;
+    QGridLayout *gridLayout_2;
+    QComboBox *difficultyCombo;
     QPushButton *newButton;
     QPushButton *pushButton;
-    QComboBox *difficultyCombo;
     QPushButton *howtoButton;
     QMenuBar *menubar;
     QMenu *menuFile;
@@ -76,18 +79,32 @@ public:
         font.setItalic(true);
         font.setWeight(75);
         titleLabel->setFont(font);
-        newButton = new QPushButton(centralwidget);
-        newButton->setObjectName(QString::fromUtf8("newButton"));
-        newButton->setGeometry(QRect(240, 230, 81, 23));
-        pushButton = new QPushButton(centralwidget);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(340, 230, 81, 23));
-        difficultyCombo = new QComboBox(centralwidget);
+        gridLayoutWidget = new QWidget(centralwidget);
+        gridLayoutWidget->setObjectName(QString::fromUtf8("gridLayoutWidget"));
+        gridLayoutWidget->setGeometry(QRect(230, 170, 211, 80));
+        gridLayout_2 = new QGridLayout(gridLayoutWidget);
+        gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
+        gridLayout_2->setContentsMargins(0, 0, 0, 0);
+        difficultyCombo = new QComboBox(gridLayoutWidget);
         difficultyCombo->setObjectName(QString::fromUtf8("difficultyCombo"));
-        difficultyCombo->setGeometry(QRect(240, 270, 81, 22));
-        howtoButton = new QPushButton(centralwidget);
+
+        gridLayout_2->addWidget(difficultyCombo, 1, 0, 1, 1);
+
+        newButton = new QPushButton(gridLayoutWidget);
+        newButton->setObjectName(QString::fromUtf8("newButton"));
+
+        gridLayout_2->addWidget(newButton, 0, 0, 1, 1);
+
+        pushButton = new QPushButton(gridLayoutWidget);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+
+        gridLayout_2->addWidget(pushButton, 0, 1, 1, 1);
+
+        howtoButton = new QPushButton(gridLayoutWidget);
         howtoButton->setObjectName(QString::fromUtf8("howtoButton"));
-        howtoButton->setGeometry(QRect(340, 270, 81, 23));
+
+        gridLayout_2->addWidget(howtoButton, 1, 1, 1, 1);
+
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -113,7 +130,7 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", 0, QApplication::UnicodeUTF8));
+        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "Sudoku", 0, QApplication::UnicodeUTF8));
         actionNew_Game->setText(QApplication::translate("MainWindow", "New Game", 0, QApplication::UnicodeUTF8));
         actionNew_Game->setShortcut(QApplication::translate("MainWindow", "Ctrl+N", 0, QApplication::UnicodeUTF8));
         actionSave->setText(QApplication::translate("MainWindow", "Save", 0, QApplication::UnicodeUTF8));
@@ -121,8 +138,6 @@ public:
         actionSaveExit->setText(QApplication::translate("MainWindow", "Save and Exit", 0, QApplication::UnicodeUTF8));
         actionExit->setText(QApplication::translate("MainWindow", "Exit", 0, QApplication::UnicodeUTF8));
         titleLabel->setText(QApplication::translate("MainWindow", "Sudoku", 0, QApplication::UnicodeUTF8));
-        newButton->setText(QApplication::translate("MainWindow", "New Game", 0, QApplication::UnicodeUTF8));
-        pushButton->setText(QApplication::translate("MainWindow", "Continue", 0, QApplication::UnicodeUTF8));
         difficultyCombo->clear();
         difficultyCombo->insertItems(0, QStringList()
          << QApplication::translate("MainWindow", "Easy", 0, QApplication::UnicodeUTF8)
@@ -130,6 +145,8 @@ public:
          << QApplication::translate("MainWindow", "Hard", 0, QApplication::UnicodeUTF8)
          << QApplication::translate("MainWindow", "Insane", 0, QApplication::UnicodeUTF8)
         );
+        newButton->setText(QApplication::translate("MainWindow", "New Game", 0, QApplication::UnicodeUTF8));
+        pushButton->setText(QApplication::translate("MainWindow", "Continue", 0, QApplication::UnicodeUTF8));
         howtoButton->setText(QApplication::translate("MainWindow", "How to Play", 0, QApplication::UnicodeUTF8));
         menuFile->setTitle(QApplication::translate("MainWindow", "File", 0, QApplication::UnicodeUTF8));
     } // retranslateUi

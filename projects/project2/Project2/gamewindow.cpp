@@ -1,18 +1,21 @@
 #include "gamewindow.h"
 #include "ui_gamewindow.h"
 #include "mainwindow.h"
+#include "howtodialog.h"
+#include "newgame.h"
 
 #include <QDebug>
 #include <cmath>
 #include <QtCore>
 
 
-GameWindow::GameWindow( QWidget *parent, int level ) : QMainWindow(parent), ui(new Ui::GameWindow) {
+GameWindow::GameWindow( QWidget *parent, int level ) : QMainWindow( parent ), ui( new Ui::GameWindow ) {
     this->level = level;
     ui->setupUi(this);
 
     connect( ui->actionExit, SIGNAL( triggered() ), this, SLOT( close() ) );
-    //connect( ui->actionHow_To_Play, SIGNAL( triggered() ), this, close() );
+    connect( ui->actionHow_To_Play, SIGNAL( triggered() ), this, SLOT( showHelp() ) );
+    connect( ui->actionNew_Game, SIGNAL( triggered() ), this, SLOT( newGame() ) );
 
     //begin cell configs
     initCells();
@@ -35,6 +38,9 @@ void GameWindow::on_backButton_clicked() {
     this->close();
 }
 
+/**
+ * @brief GameWindow::initCells
+ */
 void GameWindow::initCells(){
     ui->cell_0_0->setInputMask( "D" );
     connect( ui->cell_0_0, SIGNAL( editingFinished() ), this, SLOT( cell_0_0_blur() ) );
@@ -283,7 +289,6 @@ void GameWindow::showNumbers(){
        mask[i] = gameMatrix[i];
     }
 
-
     for( int i = 0; i < 3; i++){
         for( int j = 0; j < 3; j++ ){
             //for each 3x3 square hide 5 numbers
@@ -321,7 +326,6 @@ void GameWindow::showNumbers(){
             }
         }
     }
-
 }
 
 /**
@@ -737,6 +741,27 @@ int *GameWindow::zeroFill( int size ){
 int GameWindow::random( int max, int min ){
     return  min + ( rand() % ( max - min + 1 ) );
 }
+
+/**
+ * show help dialog
+ * @brief GameWindow::showHelp
+ */
+void GameWindow::showHelp(){
+    HowToDialog *how = new HowToDialog;
+    how->show();
+}
+
+/**
+ *
+ * @brief GameWindow::newGame
+ */
+void GameWindow::newGame(){
+    NewGame dialog( this );
+    if( dialog.exec() ){
+        //int index = dialog.difficultyCombo->currentIndex();
+    }
+}
+
 //being lineedit slots
 void GameWindow::cell_0_0_blur(){qDebug()<< "cell_0_0 slot";}
 void GameWindow::cell_0_1_blur(){qDebug()<< "cell_0_1 slot";}

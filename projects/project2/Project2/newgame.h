@@ -19,4 +19,6 @@ private:
     Ui::NewGame *ui;
 };
 
+
+
 #endif // NEWGAME_H

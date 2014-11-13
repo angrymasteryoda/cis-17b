@@ -6,7 +6,7 @@
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
-#include "../../gotocell2/gotocelldialog.h"
+#include "../../spreadsheet/gotocelldialog.h"
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'gotocelldialog.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 63

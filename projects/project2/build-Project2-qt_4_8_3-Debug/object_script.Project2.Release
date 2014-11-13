@@ -1,0 +1,12 @@
+INPUT(
+./release\Main.o
+./release\mainwindow.o
+./release\gamewindow.o
+./release\howtodialog.o
+./release\newgame.o
+./release\moc_mainwindow.o
+./release\moc_gamewindow.o
+./release\moc_howtodialog.o
+./release\moc_newgame.o
+./release\qrc_resources.o
+);

@@ -22,7 +22,7 @@ static const uint qt_meta_data_GameWindow[] = {
        6,       // revision
        0,       // classname
        0,    0, // classinfo
-      82,   14, // methods
+      84,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -112,6 +112,8 @@ static const uint qt_meta_data_GameWindow[] = {
     1284,   11,   11,   11, 0x08,
     1300,   11,   11,   11, 0x08,
     1316,   11,   11,   11, 0x08,
+    1332,   11,   11,   11, 0x08,
+    1343,   11,   11,   11, 0x08,
 
        0        // eod
 };
@@ -158,7 +160,7 @@ static const char qt_meta_stringdata_GameWindow[] = {
     "cell_8_2_blur()\0cell_8_3_blur()\0"
     "cell_8_4_blur()\0cell_8_5_blur()\0"
     "cell_8_6_blur()\0cell_8_7_blur()\0"
-    "cell_8_8_blur()\0"
+    "cell_8_8_blur()\0showHelp()\0newGame()\0"
 };
 
 void GameWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
@@ -249,6 +251,8 @@ void GameWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 79: _t->cell_8_6_blur(); break;
         case 80: _t->cell_8_7_blur(); break;
         case 81: _t->cell_8_8_blur(); break;
+        case 82: _t->showHelp(); break;
+        case 83: _t->newGame(); break;
         default: ;
         }
     }
@@ -287,9 +291,9 @@ int GameWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 82)
+        if (_id < 84)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 82;
+        _id -= 84;
     }
     return _id;
 }

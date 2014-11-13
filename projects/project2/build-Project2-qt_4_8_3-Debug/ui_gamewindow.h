@@ -766,7 +766,7 @@ public:
 
     void retranslateUi(QMainWindow *GameWindow)
     {
-        GameWindow->setWindowTitle(QApplication::translate("GameWindow", "MainWindow", 0, QApplication::UnicodeUTF8));
+        GameWindow->setWindowTitle(QApplication::translate("GameWindow", "Sudoku", 0, QApplication::UnicodeUTF8));
         actionNew_Game->setText(QApplication::translate("GameWindow", "New Game", 0, QApplication::UnicodeUTF8));
         actionSave->setText(QApplication::translate("GameWindow", "Save", 0, QApplication::UnicodeUTF8));
         actionSave_and_Exit->setText(QApplication::translate("GameWindow", "Save and Exit", 0, QApplication::UnicodeUTF8));
