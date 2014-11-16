@@ -27,5 +27,32 @@ void MainWindow::on_howtoButton_clicked()
 }
 
 void MainWindow::on_actionNew_Game_triggered() {
-    on_newButton_clicked();
+    int level;
+    QStringList items;
+    items << tr("Easy") << tr( "Medium" ) << tr( "Hard" ) << tr( "Insane");
+
+    bool ok;
+    QString text = QInputDialog::getItem( this, tr( "New Game" ),
+                                         tr( "Difficulty" ),  items, 0,
+                                         false, &ok );
+    if (ok && !text.isEmpty() ){
+        text = text.toLower();
+        if( text == "easy" ) {
+            level = 0;
+        }
+        else if ( text == "medium" ){
+            level = 1;
+        }
+        else if ( text == "hard" ){
+            level = 2;
+        }
+        else {
+            level = 3;
+        }
+    }
+
+    GameWindow *game = new GameWindow( 0, level );
+    game->show();
+    this->close();
+    //on_newButton_clicked();
 }

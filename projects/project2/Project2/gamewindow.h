@@ -115,9 +115,12 @@ private:
     void initCells();
     void print( bool debug = false );
     void setCell( int row, int col, int set );
+    void setCell( int row, int col, QString set );
     void shuffle();
     void showNumbers();
     void setReadOnly( int row, int col, bool flag );
+    void reset( int level );
+    void clear( int* arr );
 
 
     QString getCell( int row, int col );

@@ -2,11 +2,11 @@
 #include "ui_gamewindow.h"
 #include "mainwindow.h"
 #include "howtodialog.h"
-#include "newgame.h"
 
 #include <QDebug>
 #include <cmath>
 #include <QtCore>
+#include <QtGui>
 
 
 GameWindow::GameWindow( QWidget *parent, int level ) : QMainWindow( parent ), ui( new Ui::GameWindow ) {
@@ -18,6 +18,8 @@ GameWindow::GameWindow( QWidget *parent, int level ) : QMainWindow( parent ), ui
     connect( ui->actionNew_Game, SIGNAL( triggered() ), this, SLOT( newGame() ) );
 
     //begin cell configs
+    gameMatrix = zeroFill( 81 );
+    mask = zeroFill( 81 );
     initCells();
     initGame();
 }
@@ -211,8 +213,6 @@ void GameWindow::initCells(){
  * @brief GameWindow::initGame
  */
 void GameWindow::initGame(){
-    gameMatrix = zeroFill( 81 );
-    mask = zeroFill( 81 );
     for ( int i = 0; i < 9; i++ ) {
         for ( int j = 0; j < 9; j++ ) {
             gameMatrix[i * 9 + j] = (int) ( i * 3 + floor( i / 3 ) + j ) % 9 + 1;
@@ -387,6 +387,7 @@ void GameWindow::print( bool debug ){
     }
 }
 
+
 /**
  * sets the cell to a certain value using the coord( row, col)
  * @brief GameWindow::setCell
@@ -395,106 +396,122 @@ void GameWindow::print( bool debug ){
  * @param set
  */
 void GameWindow::setCell( int row, int col, int set ){
+    if( set == 0 ){
+        return;
+    } else if ( set == -1 ){
+        setCell( row, col, "" );
+    } else {
+        setCell( row, col, QString::number( set ) );
+    }
+}
+
+/**
+ * sets the cell to a certain value using the coord( row, col)
+ * @brief GameWindow::setCell
+ * @param row
+ * @param col
+ * @param set
+ */
+void GameWindow::setCell( int row, int col, QString set ){
     //dont set them if 0
-    if( set == 0 ){ return; }
     if( row == 0 ){
-        if( col == 0 ) { ui->cell_0_0->setText( QString::number( set ) ) ; return;}
-        if( col == 1 ) { ui->cell_0_1->setText( QString::number( set ) ) ; return;}
-        if( col == 2 ) { ui->cell_0_2->setText( QString::number( set ) ) ; return;}
-        if( col == 3 ) { ui->cell_0_3->setText( QString::number( set ) ) ; return;}
-        if( col == 4 ) { ui->cell_0_4->setText( QString::number( set ) ) ; return;}
-        if( col == 5 ) { ui->cell_0_5->setText( QString::number( set ) ) ; return;}
-        if( col == 6 ) { ui->cell_0_6->setText( QString::number( set ) ) ; return;}
-        if( col == 7 ) { ui->cell_0_7->setText( QString::number( set ) ) ; return;}
-        if( col == 8 ) { ui->cell_0_8->setText( QString::number( set ) ) ; return;}
+        if( col == 0 ) { ui->cell_0_0->setText( set ) ; return;}
+        if( col == 1 ) { ui->cell_0_1->setText( set ) ; return;}
+        if( col == 2 ) { ui->cell_0_2->setText( set ) ; return;}
+        if( col == 3 ) { ui->cell_0_3->setText( set ) ; return;}
+        if( col == 4 ) { ui->cell_0_4->setText( set ) ; return;}
+        if( col == 5 ) { ui->cell_0_5->setText( set ) ; return;}
+        if( col == 6 ) { ui->cell_0_6->setText( set ) ; return;}
+        if( col == 7 ) { ui->cell_0_7->setText( set ) ; return;}
+        if( col == 8 ) { ui->cell_0_8->setText( set ) ; return;}
     }
     if( row == 1 ){
-        if( col == 0 ) { ui->cell_1_0->setText( QString::number( set ) ) ; return;}
-        if( col == 1 ) { ui->cell_1_1->setText( QString::number( set ) ) ; return;}
-        if( col == 2 ) { ui->cell_1_2->setText( QString::number( set ) ) ; return;}
-        if( col == 3 ) { ui->cell_1_3->setText( QString::number( set ) ) ; return;}
-        if( col == 4 ) { ui->cell_1_4->setText( QString::number( set ) ) ; return;}
-        if( col == 5 ) { ui->cell_1_5->setText( QString::number( set ) ) ; return;}
-        if( col == 6 ) { ui->cell_1_6->setText( QString::number( set ) ) ; return;}
-        if( col == 7 ) { ui->cell_1_7->setText( QString::number( set ) ) ; return;}
-        if( col == 8 ) { ui->cell_1_8->setText( QString::number( set ) ) ; return;}
+        if( col == 0 ) { ui->cell_1_0->setText( set ) ; return;}
+        if( col == 1 ) { ui->cell_1_1->setText( set ) ; return;}
+        if( col == 2 ) { ui->cell_1_2->setText( set ) ; return;}
+        if( col == 3 ) { ui->cell_1_3->setText( set ) ; return;}
+        if( col == 4 ) { ui->cell_1_4->setText( set ) ; return;}
+        if( col == 5 ) { ui->cell_1_5->setText( set ) ; return;}
+        if( col == 6 ) { ui->cell_1_6->setText( set ) ; return;}
+        if( col == 7 ) { ui->cell_1_7->setText( set ) ; return;}
+        if( col == 8 ) { ui->cell_1_8->setText( set ) ; return;}
     }
     if( row == 2 ){
-        if( col == 0 ) { ui->cell_2_0->setText( QString::number( set ) ) ; return;}
-        if( col == 1 ) { ui->cell_2_1->setText( QString::number( set ) ) ; return;}
-        if( col == 2 ) { ui->cell_2_2->setText( QString::number( set ) ) ; return;}
-        if( col == 3 ) { ui->cell_2_3->setText( QString::number( set ) ) ; return;}
-        if( col == 4 ) { ui->cell_2_4->setText( QString::number( set ) ) ; return;}
-        if( col == 5 ) { ui->cell_2_5->setText( QString::number( set ) ) ; return;}
-        if( col == 6 ) { ui->cell_2_6->setText( QString::number( set ) ) ; return;}
-        if( col == 7 ) { ui->cell_2_7->setText( QString::number( set ) ) ; return;}
-        if( col == 8 ) { ui->cell_2_8->setText( QString::number( set ) ) ; return;}
+        if( col == 0 ) { ui->cell_2_0->setText( set ) ; return;}
+        if( col == 1 ) { ui->cell_2_1->setText( set ) ; return;}
+        if( col == 2 ) { ui->cell_2_2->setText( set ) ; return;}
+        if( col == 3 ) { ui->cell_2_3->setText( set ) ; return;}
+        if( col == 4 ) { ui->cell_2_4->setText( set ) ; return;}
+        if( col == 5 ) { ui->cell_2_5->setText( set ) ; return;}
+        if( col == 6 ) { ui->cell_2_6->setText( set ) ; return;}
+        if( col == 7 ) { ui->cell_2_7->setText( set ) ; return;}
+        if( col == 8 ) { ui->cell_2_8->setText( set ) ; return;}
     }
     if( row == 3 ){
-        if( col == 0 ) { ui->cell_3_0->setText( QString::number( set ) ) ; return;}
-        if( col == 1 ) { ui->cell_3_1->setText( QString::number( set ) ) ; return;}
-        if( col == 2 ) { ui->cell_3_2->setText( QString::number( set ) ) ; return;}
-        if( col == 3 ) { ui->cell_3_3->setText( QString::number( set ) ) ; return;}
-        if( col == 4 ) { ui->cell_3_4->setText( QString::number( set ) ) ; return;}
-        if( col == 5 ) { ui->cell_3_5->setText( QString::number( set ) ) ; return;}
-        if( col == 6 ) { ui->cell_3_6->setText( QString::number( set ) ) ; return;}
-        if( col == 7 ) { ui->cell_3_7->setText( QString::number( set ) ) ; return;}
-        if( col == 8 ) { ui->cell_3_8->setText( QString::number( set ) ) ; return;}
+        if( col == 0 ) { ui->cell_3_0->setText( set ) ; return;}
+        if( col == 1 ) { ui->cell_3_1->setText( set ) ; return;}
+        if( col == 2 ) { ui->cell_3_2->setText( set ) ; return;}
+        if( col == 3 ) { ui->cell_3_3->setText( set ) ; return;}
+        if( col == 4 ) { ui->cell_3_4->setText( set ) ; return;}
+        if( col == 5 ) { ui->cell_3_5->setText( set ) ; return;}
+        if( col == 6 ) { ui->cell_3_6->setText( set ) ; return;}
+        if( col == 7 ) { ui->cell_3_7->setText( set ) ; return;}
+        if( col == 8 ) { ui->cell_3_8->setText( set ) ; return;}
     }
     if( row == 4 ){
-        if( col == 0 ) { ui->cell_4_0->setText( QString::number( set ) ) ; return;}
-        if( col == 1 ) { ui->cell_4_1->setText( QString::number( set ) ) ; return;}
-        if( col == 2 ) { ui->cell_4_2->setText( QString::number( set ) ) ; return;}
-        if( col == 3 ) { ui->cell_4_3->setText( QString::number( set ) ) ; return;}
-        if( col == 4 ) { ui->cell_4_4->setText( QString::number( set ) ) ; return;}
-        if( col == 5 ) { ui->cell_4_5->setText( QString::number( set ) ) ; return;}
-        if( col == 6 ) { ui->cell_4_6->setText( QString::number( set ) ) ; return;}
-        if( col == 7 ) { ui->cell_4_7->setText( QString::number( set ) ) ; return;}
-        if( col == 8 ) { ui->cell_4_8->setText( QString::number( set ) ) ; return;}
+        if( col == 0 ) { ui->cell_4_0->setText( set ) ; return;}
+        if( col == 1 ) { ui->cell_4_1->setText( set ) ; return;}
+        if( col == 2 ) { ui->cell_4_2->setText( set ) ; return;}
+        if( col == 3 ) { ui->cell_4_3->setText( set ) ; return;}
+        if( col == 4 ) { ui->cell_4_4->setText( set ) ; return;}
+        if( col == 5 ) { ui->cell_4_5->setText( set ) ; return;}
+        if( col == 6 ) { ui->cell_4_6->setText( set ) ; return;}
+        if( col == 7 ) { ui->cell_4_7->setText( set ) ; return;}
+        if( col == 8 ) { ui->cell_4_8->setText( set ) ; return;}
     }
     if( row == 5 ){
-        if( col == 0 ) { ui->cell_5_0->setText( QString::number( set ) ) ; return;}
-        if( col == 1 ) { ui->cell_5_1->setText( QString::number( set ) ) ; return;}
-        if( col == 2 ) { ui->cell_5_2->setText( QString::number( set ) ) ; return;}
-        if( col == 3 ) { ui->cell_5_3->setText( QString::number( set ) ) ; return;}
-        if( col == 4 ) { ui->cell_5_4->setText( QString::number( set ) ) ; return;}
-        if( col == 5 ) { ui->cell_5_5->setText( QString::number( set ) ) ; return;}
-        if( col == 6 ) { ui->cell_5_6->setText( QString::number( set ) ) ; return;}
-        if( col == 7 ) { ui->cell_5_7->setText( QString::number( set ) ) ; return;}
-        if( col == 8 ) { ui->cell_5_8->setText( QString::number( set ) ) ; return;}
+        if( col == 0 ) { ui->cell_5_0->setText( set ) ; return;}
+        if( col == 1 ) { ui->cell_5_1->setText( set ) ; return;}
+        if( col == 2 ) { ui->cell_5_2->setText( set ) ; return;}
+        if( col == 3 ) { ui->cell_5_3->setText( set ) ; return;}
+        if( col == 4 ) { ui->cell_5_4->setText( set ) ; return;}
+        if( col == 5 ) { ui->cell_5_5->setText( set ) ; return;}
+        if( col == 6 ) { ui->cell_5_6->setText( set ) ; return;}
+        if( col == 7 ) { ui->cell_5_7->setText( set ) ; return;}
+        if( col == 8 ) { ui->cell_5_8->setText( set ) ; return;}
     }
     if( row == 6 ){
-        if( col == 0 ) { ui->cell_6_0->setText( QString::number( set ) ) ; return;}
-        if( col == 1 ) { ui->cell_6_1->setText( QString::number( set ) ) ; return;}
-        if( col == 2 ) { ui->cell_6_2->setText( QString::number( set ) ) ; return;}
-        if( col == 3 ) { ui->cell_6_3->setText( QString::number( set ) ) ; return;}
-        if( col == 4 ) { ui->cell_6_4->setText( QString::number( set ) ) ; return;}
-        if( col == 5 ) { ui->cell_6_5->setText( QString::number( set ) ) ; return;}
-        if( col == 6 ) { ui->cell_6_6->setText( QString::number( set ) ) ; return;}
-        if( col == 7 ) { ui->cell_6_7->setText( QString::number( set ) ) ; return;}
-        if( col == 8 ) { ui->cell_6_8->setText( QString::number( set ) ) ; return;}
+        if( col == 0 ) { ui->cell_6_0->setText( set ) ; return;}
+        if( col == 1 ) { ui->cell_6_1->setText( set ) ; return;}
+        if( col == 2 ) { ui->cell_6_2->setText( set ) ; return;}
+        if( col == 3 ) { ui->cell_6_3->setText( set ) ; return;}
+        if( col == 4 ) { ui->cell_6_4->setText( set ) ; return;}
+        if( col == 5 ) { ui->cell_6_5->setText( set ) ; return;}
+        if( col == 6 ) { ui->cell_6_6->setText( set ) ; return;}
+        if( col == 7 ) { ui->cell_6_7->setText( set ) ; return;}
+        if( col == 8 ) { ui->cell_6_8->setText( set ) ; return;}
     }
     if( row == 7 ){
-        if( col == 0 ) { ui->cell_7_0->setText( QString::number( set ) ) ; return;}
-        if( col == 1 ) { ui->cell_7_1->setText( QString::number( set ) ) ; return;}
-        if( col == 2 ) { ui->cell_7_2->setText( QString::number( set ) ) ; return;}
-        if( col == 3 ) { ui->cell_7_3->setText( QString::number( set ) ) ; return;}
-        if( col == 4 ) { ui->cell_7_4->setText( QString::number( set ) ) ; return;}
-        if( col == 5 ) { ui->cell_7_5->setText( QString::number( set ) ) ; return;}
-        if( col == 6 ) { ui->cell_7_6->setText( QString::number( set ) ) ; return;}
-        if( col == 7 ) { ui->cell_7_7->setText( QString::number( set ) ) ; return;}
-        if( col == 8 ) { ui->cell_7_8->setText( QString::number( set ) ) ; return;}
+        if( col == 0 ) { ui->cell_7_0->setText( set ) ; return;}
+        if( col == 1 ) { ui->cell_7_1->setText( set ) ; return;}
+        if( col == 2 ) { ui->cell_7_2->setText( set ) ; return;}
+        if( col == 3 ) { ui->cell_7_3->setText( set ) ; return;}
+        if( col == 4 ) { ui->cell_7_4->setText( set ) ; return;}
+        if( col == 5 ) { ui->cell_7_5->setText( set ) ; return;}
+        if( col == 6 ) { ui->cell_7_6->setText( set ) ; return;}
+        if( col == 7 ) { ui->cell_7_7->setText( set ) ; return;}
+        if( col == 8 ) { ui->cell_7_8->setText( set ) ; return;}
     }
     if( row == 8 ){
-        if( col == 0 ) { ui->cell_8_0->setText( QString::number( set ) ) ; return;}
-        if( col == 1 ) { ui->cell_8_1->setText( QString::number( set ) ) ; return;}
-        if( col == 2 ) { ui->cell_8_2->setText( QString::number( set ) ) ; return;}
-        if( col == 3 ) { ui->cell_8_3->setText( QString::number( set ) ) ; return;}
-        if( col == 4 ) { ui->cell_8_4->setText( QString::number( set ) ) ; return;}
-        if( col == 5 ) { ui->cell_8_5->setText( QString::number( set ) ) ; return;}
-        if( col == 6 ) { ui->cell_8_6->setText( QString::number( set ) ) ; return;}
-        if( col == 7 ) { ui->cell_8_7->setText( QString::number( set ) ) ; return;}
-        if( col == 8 ) { ui->cell_8_8->setText( QString::number( set ) ) ; return;}
+        if( col == 0 ) { ui->cell_8_0->setText( set ) ; return;}
+        if( col == 1 ) { ui->cell_8_1->setText( set ) ; return;}
+        if( col == 2 ) { ui->cell_8_2->setText( set ) ; return;}
+        if( col == 3 ) { ui->cell_8_3->setText( set ) ; return;}
+        if( col == 4 ) { ui->cell_8_4->setText( set ) ; return;}
+        if( col == 5 ) { ui->cell_8_5->setText( set ) ; return;}
+        if( col == 6 ) { ui->cell_8_6->setText( set ) ; return;}
+        if( col == 7 ) { ui->cell_8_7->setText( set ) ; return;}
+        if( col == 8 ) { ui->cell_8_8->setText( set ) ; return;}
     }
 }
 
@@ -752,13 +769,60 @@ void GameWindow::showHelp(){
 }
 
 /**
- *
+ * create a new game
  * @brief GameWindow::newGame
  */
 void GameWindow::newGame(){
-    NewGame dialog( this );
-    if( dialog.exec() ){
-        //int index = dialog.difficultyCombo->currentIndex();
+    QStringList items;
+    items << tr("Easy") << tr( "Medium" ) << tr( "Hard" ) << tr( "Insane");
+
+    bool ok;
+    QString text = QInputDialog::getItem( this, tr( "New Game" ),
+                                         tr( "Difficulty" ),  items, 0,
+                                         false, &ok );
+    if (ok && !text.isEmpty() ){
+        text = text.toLower();
+        if( text == "easy" ) {// .compare( "easy" ) ){
+            reset( 0 );
+        }
+        else if ( text == "medium" ){
+            reset( 1 );
+        }
+        else if ( text == "hard" ){
+            reset( 2 );
+        }
+        else {
+            reset( 3 );
+        }
+    }
+}
+
+/**
+ * reset the board to play a new game
+ * @brief GameWindow::reset
+ * @param level
+ */
+void GameWindow::reset( int level ){
+    for( int r = 0; r < 9; r++ ){
+        for( int c = 0; c < 9; c++ ){
+            setReadOnly( r, c, false );
+            setCell( r, c, "" );
+        }
+    }
+    clear( this->mask );
+    clear( this->gameMatrix );
+    this->level = level;
+    initGame();
+}
+
+/**
+ * zero out an array assuming the length is 81
+ * @brief clear
+ * @param arr
+ */
+void GameWindow::clear( int* arr ){
+    for( int i = 0; i < 81; i++ ){
+        arr[i] = 0;
     }
 }
 

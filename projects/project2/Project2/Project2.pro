@@ -2,20 +2,17 @@ SOURCES += \
     Main.cpp \
     mainwindow.cpp \
     gamewindow.cpp \
-    howtodialog.cpp \
-    newgame.cpp
+    howtodialog.cpp
 
 FORMS += \
     mainwindow.ui \
     gamewindow.ui \
-    howtodialog.ui \
-    newgame.ui
+    howtodialog.ui
 
 HEADERS += \
     mainwindow.h \
     gamewindow.h \
-    howtodialog.h \
-    newgame.h
+    howtodialog.h
 
 RESOURCES += \
     resources.qrc
