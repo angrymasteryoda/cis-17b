@@ -4,6 +4,7 @@
 #include "gamewindow.h"
 #include "howtodialog.h"
 #include <QtCore>
+#include <QtGui>
 
 MainWindow::MainWindow( QWidget *parent ) : QMainWindow( parent ), ui( new Ui::MainWindow ) {
     ui->setupUi(this);

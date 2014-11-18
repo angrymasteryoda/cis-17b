@@ -768,7 +768,9 @@ public:
     {
         GameWindow->setWindowTitle(QApplication::translate("GameWindow", "Sudoku", 0, QApplication::UnicodeUTF8));
         actionNew_Game->setText(QApplication::translate("GameWindow", "New Game", 0, QApplication::UnicodeUTF8));
+        actionNew_Game->setShortcut(QApplication::translate("GameWindow", "Ctrl+N", 0, QApplication::UnicodeUTF8));
         actionSave->setText(QApplication::translate("GameWindow", "Save", 0, QApplication::UnicodeUTF8));
+        actionSave->setShortcut(QApplication::translate("GameWindow", "Ctrl+S", 0, QApplication::UnicodeUTF8));
         actionSave_and_Exit->setText(QApplication::translate("GameWindow", "Save and Exit", 0, QApplication::UnicodeUTF8));
         actionExit->setText(QApplication::translate("GameWindow", "Exit", 0, QApplication::UnicodeUTF8));
         actionHow_To_Play->setText(QApplication::translate("GameWindow", "How To Play", 0, QApplication::UnicodeUTF8));
