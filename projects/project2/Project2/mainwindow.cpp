@@ -8,6 +8,7 @@
 
 MainWindow::MainWindow( QWidget *parent ) : QMainWindow( parent ), ui( new Ui::MainWindow ) {
     ui->setupUi(this);
+    connect( ui->actionExit, SIGNAL( triggered() ), this, SLOT( close() ) );
 }
 
 MainWindow::~MainWindow()
@@ -30,7 +31,7 @@ void MainWindow::on_howtoButton_clicked()
 void MainWindow::on_actionNew_Game_triggered() {
     int level;
     QStringList items;
-    items << tr("Easy") << tr( "Medium" ) << tr( "Hard" ) << tr( "Insane");
+    items << tr("Easy") << tr( "Medium" ) << tr( "Hard" ) << tr( "Insane" ) << tr( "Debug" );
 
     bool ok;
     QString text = QInputDialog::getItem( this, tr( "New Game" ),
@@ -47,8 +48,11 @@ void MainWindow::on_actionNew_Game_triggered() {
         else if ( text == "hard" ){
             level = 2;
         }
-        else {
+        else if ( text == "insane" ){
             level = 3;
+        }
+        else{
+            level = 0xff;
         }
     }
 

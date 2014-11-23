@@ -3,10 +3,10 @@ INPUT(
 ./debug\mainwindow.o
 ./debug\gamewindow.o
 ./debug\howtodialog.o
-./debug\newgame.o
+./debug\database.o
+./debug\settings.o
 ./debug\moc_mainwindow.o
 ./debug\moc_gamewindow.o
 ./debug\moc_howtodialog.o
-./debug\moc_newgame.o
 ./debug\qrc_resources.o
 );

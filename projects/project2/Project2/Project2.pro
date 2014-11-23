@@ -3,7 +3,8 @@ SOURCES += \
     mainwindow.cpp \
     gamewindow.cpp \
     howtodialog.cpp \
-    database.cpp
+    database.cpp \
+    settings.cpp
 QT += sql
 FORMS += \
     mainwindow.ui \
@@ -14,7 +15,8 @@ HEADERS += \
     mainwindow.h \
     gamewindow.h \
     howtodialog.h \
-    database.h
+    database.h \
+    settings.h
 
 RESOURCES += \
     resources.qrc

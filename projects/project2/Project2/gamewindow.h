@@ -2,6 +2,7 @@
 #define GAMEWINDOW_H
 
 #include <QMainWindow>
+#include <QTime>
 
 namespace Ui {
 class GameWindow;
@@ -110,7 +111,12 @@ private:
     int *zeroFill( int );
 
     bool isSolvable();
+    bool save();
 
+    void gameOver();
+    void disconnectCell( int row, int col );
+    void blur( int row, int col );
+    void setMask( int row, int col, int set );
     void initGame();
     void initCells();
     void print( bool debug = false );
@@ -121,9 +127,11 @@ private:
     void setReadOnly( int row, int col, bool flag );
     void reset( int level );
     void clear( int* arr );
-
+    void isSolved();
 
     QString getCell( int row, int col );
+
+    QTime startTime;
 
     Ui::GameWindow *ui;
 };

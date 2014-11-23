@@ -213,6 +213,7 @@ void GameWindow::initCells(){
  * @brief GameWindow::initGame
  */
 void GameWindow::initGame(){
+    startTime.start();
     for ( int i = 0; i < 9; i++ ) {
         for ( int j = 0; j < 9; j++ ) {
             gameMatrix[i * 9 + j] = (int) ( i * 3 + floor( i / 3 ) + j ) % 9 + 1;
@@ -289,30 +290,33 @@ void GameWindow::showNumbers(){
        mask[i] = gameMatrix[i];
     }
 
-    for( int i = 0; i < 3; i++){
-        for( int j = 0; j < 3; j++ ){
-            //for each 3x3 square hide 5 numbers
-            int showamt = 5;
-            if ( level == 1 ){
-                showamt = random( 6, 5 );
-            }
-            else if( level == 2 ){
-                showamt = random( 8, 6 );
-            }
-            else if( level == 3 ){
-                showamt = random( 8, 7 );
-            }
-            for( int k = 0; k < showamt; k++ ){
-                int c = 0;
-                do{
-                    c = rand() % 9;
+    if ( level != 0xff ){
+        for( int i = 0; i < 3; i++){
+            for( int j = 0; j < 3; j++ ){
+                //for each 3x3 square hide 5 numbers
+                int showamt = 5;
+                if ( level == 1 ){
+                    showamt = random( 6, 5 );
                 }
-                while( mask[ (int)( i * 3 + floor( c / 3 ) ) * 9 + j * 3 + c % 3 ] == 0 );
+                else if( level == 2 ){
+                    showamt = random( 8, 6 );
+                }
+                else if( level == 3 ){
+                    showamt = random( 8, 7 );
+                }
+                for( int k = 0; k < showamt; k++ ){
+                    int c = 0;
+                    do{
+                        c = rand() % 9;
+                    }
+                    while( mask[ (int)( i * 3 + floor( c / 3 ) ) * 9 + j * 3 + c % 3 ] == 0 );
 
-                mask[ (int)( i * 3 + floor( c / 3 ) ) * 9 + j * 3 + c %3 ] = 0;
+                    mask[ (int)( i * 3 + floor( c / 3 ) ) * 9 + j * 3 + c %3 ] = 0;
+                }
             }
         }
     }
+    mask[0] = 0;
 
     if( !isSolvable() ){
         qDebug() << "Made the problem to hard";
@@ -386,7 +390,6 @@ void GameWindow::print( bool debug ){
         }
     }
 }
-
 
 /**
  * sets the cell to a certain value using the coord( row, col)
@@ -626,6 +629,114 @@ QString GameWindow::getCell( int row, int col ){
 }
 
 /**
+ * disconnect lineedits
+ * @brief GameWindow::disconnectCell
+ * @param row
+ * @param col
+ */
+void GameWindow::disconnectCell( int row, int col ){
+    if( row == 0 ){
+        if( col == 0 ) { disconnect( ui->cell_0_0, SIGNAL( editingFinished() ), this, SLOT( cell_0_0_blur() ) ); }
+        if( col == 1 ) { disconnect( ui->cell_0_1, SIGNAL( editingFinished() ), this, SLOT( cell_0_1_blur() ) ); }
+        if( col == 2 ) { disconnect( ui->cell_0_2, SIGNAL( editingFinished() ), this, SLOT( cell_0_2_blur() ) ); }
+        if( col == 3 ) { disconnect( ui->cell_0_3, SIGNAL( editingFinished() ), this, SLOT( cell_0_3_blur() ) ); }
+        if( col == 4 ) { disconnect( ui->cell_0_4, SIGNAL( editingFinished() ), this, SLOT( cell_0_4_blur() ) ); }
+        if( col == 5 ) { disconnect( ui->cell_0_5, SIGNAL( editingFinished() ), this, SLOT( cell_0_5_blur() ) ); }
+        if( col == 6 ) { disconnect( ui->cell_0_6, SIGNAL( editingFinished() ), this, SLOT( cell_0_6_blur() ) ); }
+        if( col == 7 ) { disconnect( ui->cell_0_7, SIGNAL( editingFinished() ), this, SLOT( cell_0_7_blur() ) ); }
+        if( col == 8 ) { disconnect( ui->cell_0_8, SIGNAL( editingFinished() ), this, SLOT( cell_0_8_blur() ) ); }
+    }
+    if( row == 1 ){
+        if( col == 0 ) { disconnect( ui->cell_1_0, SIGNAL( editingFinished() ), this, SLOT( cell_1_0_blur() ) ); }
+        if( col == 1 ) { disconnect( ui->cell_1_1, SIGNAL( editingFinished() ), this, SLOT( cell_1_1_blur() ) ); }
+        if( col == 2 ) { disconnect( ui->cell_1_2, SIGNAL( editingFinished() ), this, SLOT( cell_1_2_blur() ) ); }
+        if( col == 3 ) { disconnect( ui->cell_1_3, SIGNAL( editingFinished() ), this, SLOT( cell_1_3_blur() ) ); }
+        if( col == 4 ) { disconnect( ui->cell_1_4, SIGNAL( editingFinished() ), this, SLOT( cell_1_4_blur() ) ); }
+        if( col == 5 ) { disconnect( ui->cell_1_5, SIGNAL( editingFinished() ), this, SLOT( cell_1_5_blur() ) ); }
+        if( col == 6 ) { disconnect( ui->cell_1_6, SIGNAL( editingFinished() ), this, SLOT( cell_1_6_blur() ) ); }
+        if( col == 7 ) { disconnect( ui->cell_1_7, SIGNAL( editingFinished() ), this, SLOT( cell_1_7_blur() ) ); }
+        if( col == 8 ) { disconnect( ui->cell_1_8, SIGNAL( editingFinished() ), this, SLOT( cell_1_8_blur() ) ); }
+    }
+    if( row == 2 ){
+        if( col == 0 ) { disconnect( ui->cell_2_0, SIGNAL( editingFinished() ), this, SLOT( cell_2_0_blur() ) ); }
+        if( col == 1 ) { disconnect( ui->cell_2_1, SIGNAL( editingFinished() ), this, SLOT( cell_2_1_blur() ) ); }
+        if( col == 2 ) { disconnect( ui->cell_2_2, SIGNAL( editingFinished() ), this, SLOT( cell_2_2_blur() ) ); }
+        if( col == 3 ) { disconnect( ui->cell_2_3, SIGNAL( editingFinished() ), this, SLOT( cell_2_3_blur() ) ); }
+        if( col == 4 ) { disconnect( ui->cell_2_4, SIGNAL( editingFinished() ), this, SLOT( cell_2_4_blur() ) ); }
+        if( col == 5 ) { disconnect( ui->cell_2_5, SIGNAL( editingFinished() ), this, SLOT( cell_2_5_blur() ) ); }
+        if( col == 6 ) { disconnect( ui->cell_2_6, SIGNAL( editingFinished() ), this, SLOT( cell_2_6_blur() ) ); }
+        if( col == 7 ) { disconnect( ui->cell_2_7, SIGNAL( editingFinished() ), this, SLOT( cell_2_7_blur() ) ); }
+        if( col == 8 ) { disconnect( ui->cell_2_8, SIGNAL( editingFinished() ), this, SLOT( cell_2_8_blur() ) ); }
+    }
+    if( row == 3 ){
+        if( col == 0 ) { disconnect( ui->cell_3_0, SIGNAL( editingFinished() ), this, SLOT( cell_3_0_blur() ) ); }
+        if( col == 1 ) { disconnect( ui->cell_3_1, SIGNAL( editingFinished() ), this, SLOT( cell_3_1_blur() ) ); }
+        if( col == 2 ) { disconnect( ui->cell_3_2, SIGNAL( editingFinished() ), this, SLOT( cell_3_2_blur() ) ); }
+        if( col == 3 ) { disconnect( ui->cell_3_3, SIGNAL( editingFinished() ), this, SLOT( cell_3_3_blur() ) ); }
+        if( col == 4 ) { disconnect( ui->cell_3_4, SIGNAL( editingFinished() ), this, SLOT( cell_3_4_blur() ) ); }
+        if( col == 5 ) { disconnect( ui->cell_3_5, SIGNAL( editingFinished() ), this, SLOT( cell_3_5_blur() ) ); }
+        if( col == 6 ) { disconnect( ui->cell_3_6, SIGNAL( editingFinished() ), this, SLOT( cell_3_6_blur() ) ); }
+        if( col == 7 ) { disconnect( ui->cell_3_7, SIGNAL( editingFinished() ), this, SLOT( cell_3_7_blur() ) ); }
+        if( col == 8 ) { disconnect( ui->cell_3_8, SIGNAL( editingFinished() ), this, SLOT( cell_3_8_blur() ) ); }
+    }
+    if( row == 4 ){
+        if( col == 0 ) { disconnect( ui->cell_4_0, SIGNAL( editingFinished() ), this, SLOT( cell_4_0_blur() ) ); }
+        if( col == 1 ) { disconnect( ui->cell_4_1, SIGNAL( editingFinished() ), this, SLOT( cell_4_1_blur() ) ); }
+        if( col == 2 ) { disconnect( ui->cell_4_2, SIGNAL( editingFinished() ), this, SLOT( cell_4_2_blur() ) ); }
+        if( col == 3 ) { disconnect( ui->cell_4_3, SIGNAL( editingFinished() ), this, SLOT( cell_4_3_blur() ) ); }
+        if( col == 4 ) { disconnect( ui->cell_4_4, SIGNAL( editingFinished() ), this, SLOT( cell_4_4_blur() ) ); }
+        if( col == 5 ) { disconnect( ui->cell_4_5, SIGNAL( editingFinished() ), this, SLOT( cell_4_5_blur() ) ); }
+        if( col == 6 ) { disconnect( ui->cell_4_6, SIGNAL( editingFinished() ), this, SLOT( cell_4_6_blur() ) ); }
+        if( col == 7 ) { disconnect( ui->cell_4_7, SIGNAL( editingFinished() ), this, SLOT( cell_4_7_blur() ) ); }
+        if( col == 8 ) { disconnect( ui->cell_4_8, SIGNAL( editingFinished() ), this, SLOT( cell_4_8_blur() ) ); }
+    }
+    if( row == 5 ){
+        if( col == 0 ) { disconnect( ui->cell_5_0, SIGNAL( editingFinished() ), this, SLOT( cell_5_0_blur() ) ); }
+        if( col == 1 ) { disconnect( ui->cell_5_1, SIGNAL( editingFinished() ), this, SLOT( cell_5_1_blur() ) ); }
+        if( col == 2 ) { disconnect( ui->cell_5_2, SIGNAL( editingFinished() ), this, SLOT( cell_5_2_blur() ) ); }
+        if( col == 3 ) { disconnect( ui->cell_5_3, SIGNAL( editingFinished() ), this, SLOT( cell_5_3_blur() ) ); }
+        if( col == 4 ) { disconnect( ui->cell_5_4, SIGNAL( editingFinished() ), this, SLOT( cell_5_4_blur() ) ); }
+        if( col == 5 ) { disconnect( ui->cell_5_5, SIGNAL( editingFinished() ), this, SLOT( cell_5_5_blur() ) ); }
+        if( col == 6 ) { disconnect( ui->cell_5_6, SIGNAL( editingFinished() ), this, SLOT( cell_5_6_blur() ) ); }
+        if( col == 7 ) { disconnect( ui->cell_5_7, SIGNAL( editingFinished() ), this, SLOT( cell_5_7_blur() ) ); }
+        if( col == 8 ) { disconnect( ui->cell_5_8, SIGNAL( editingFinished() ), this, SLOT( cell_5_8_blur() ) ); }
+    }
+    if( row == 6 ){
+        if( col == 0 ) { disconnect( ui->cell_6_0, SIGNAL( editingFinished() ), this, SLOT( cell_6_0_blur() ) ); }
+        if( col == 1 ) { disconnect( ui->cell_6_1, SIGNAL( editingFinished() ), this, SLOT( cell_6_1_blur() ) ); }
+        if( col == 2 ) { disconnect( ui->cell_6_2, SIGNAL( editingFinished() ), this, SLOT( cell_6_2_blur() ) ); }
+        if( col == 3 ) { disconnect( ui->cell_6_3, SIGNAL( editingFinished() ), this, SLOT( cell_6_3_blur() ) ); }
+        if( col == 4 ) { disconnect( ui->cell_6_4, SIGNAL( editingFinished() ), this, SLOT( cell_6_4_blur() ) ); }
+        if( col == 5 ) { disconnect( ui->cell_6_5, SIGNAL( editingFinished() ), this, SLOT( cell_6_5_blur() ) ); }
+        if( col == 6 ) { disconnect( ui->cell_6_6, SIGNAL( editingFinished() ), this, SLOT( cell_6_6_blur() ) ); }
+        if( col == 7 ) { disconnect( ui->cell_6_7, SIGNAL( editingFinished() ), this, SLOT( cell_6_7_blur() ) ); }
+        if( col == 8 ) { disconnect( ui->cell_6_8, SIGNAL( editingFinished() ), this, SLOT( cell_6_8_blur() ) ); }
+    }
+    if( row == 7 ){
+        if( col == 0 ) { disconnect( ui->cell_7_0, SIGNAL( editingFinished() ), this, SLOT( cell_7_0_blur() ) ); }
+        if( col == 1 ) { disconnect( ui->cell_7_1, SIGNAL( editingFinished() ), this, SLOT( cell_7_1_blur() ) ); }
+        if( col == 2 ) { disconnect( ui->cell_7_2, SIGNAL( editingFinished() ), this, SLOT( cell_7_2_blur() ) ); }
+        if( col == 3 ) { disconnect( ui->cell_7_3, SIGNAL( editingFinished() ), this, SLOT( cell_7_3_blur() ) ); }
+        if( col == 4 ) { disconnect( ui->cell_7_4, SIGNAL( editingFinished() ), this, SLOT( cell_7_4_blur() ) ); }
+        if( col == 5 ) { disconnect( ui->cell_7_5, SIGNAL( editingFinished() ), this, SLOT( cell_7_5_blur() ) ); }
+        if( col == 6 ) { disconnect( ui->cell_7_6, SIGNAL( editingFinished() ), this, SLOT( cell_7_6_blur() ) ); }
+        if( col == 7 ) { disconnect( ui->cell_7_7, SIGNAL( editingFinished() ), this, SLOT( cell_7_7_blur() ) ); }
+        if( col == 8 ) { disconnect( ui->cell_7_8, SIGNAL( editingFinished() ), this, SLOT( cell_7_8_blur() ) ); }
+    }
+    if( row == 8 ){
+        if( col == 0 ) { disconnect( ui->cell_8_0, SIGNAL( editingFinished() ), this, SLOT( cell_8_0_blur() ) ); }
+        if( col == 1 ) { disconnect( ui->cell_8_1, SIGNAL( editingFinished() ), this, SLOT( cell_8_1_blur() ) ); }
+        if( col == 2 ) { disconnect( ui->cell_8_2, SIGNAL( editingFinished() ), this, SLOT( cell_8_2_blur() ) ); }
+        if( col == 3 ) { disconnect( ui->cell_8_3, SIGNAL( editingFinished() ), this, SLOT( cell_8_3_blur() ) ); }
+        if( col == 4 ) { disconnect( ui->cell_8_4, SIGNAL( editingFinished() ), this, SLOT( cell_8_4_blur() ) ); }
+        if( col == 5 ) { disconnect( ui->cell_8_5, SIGNAL( editingFinished() ), this, SLOT( cell_8_5_blur() ) ); }
+        if( col == 6 ) { disconnect( ui->cell_8_6, SIGNAL( editingFinished() ), this, SLOT( cell_8_6_blur() ) ); }
+        if( col == 7 ) { disconnect( ui->cell_8_7, SIGNAL( editingFinished() ), this, SLOT( cell_8_7_blur() ) ); }
+        if( col == 8 ) { disconnect( ui->cell_8_8, SIGNAL( editingFinished() ), this, SLOT( cell_8_8_blur() ) ); }
+    }
+}
+
+/**
  * set the readonly state on the cell
  * @brief GameWindow::setReadOnly
  * @param row
@@ -774,13 +885,13 @@ void GameWindow::showHelp(){
  */
 void GameWindow::newGame(){
     QStringList items;
-    items << tr("Easy") << tr( "Medium" ) << tr( "Hard" ) << tr( "Insane");
+    items << tr("Easy") << tr( "Medium" ) << tr( "Hard" ) << tr( "Insane") << tr( "Debug" );;
 
     bool ok;
     QString text = QInputDialog::getItem( this, tr( "New Game" ),
                                          tr( "Difficulty" ),  items, 0,
                                          false, &ok );
-    if (ok && !text.isEmpty() ){
+    if ( ok && !text.isEmpty() ){
         text = text.toLower();
         if( text == "easy" ) {// .compare( "easy" ) ){
             reset( 0 );
@@ -791,8 +902,11 @@ void GameWindow::newGame(){
         else if ( text == "hard" ){
             reset( 2 );
         }
-        else {
+        else if ( text == "insane" ){
             reset( 3 );
+        }
+        else{
+            reset( 0xff );
         }
     }
 }
@@ -805,6 +919,7 @@ void GameWindow::newGame(){
 void GameWindow::reset( int level ){
     for( int r = 0; r < 9; r++ ){
         for( int c = 0; c < 9; c++ ){
+            disconnectCell( r, c );
             setReadOnly( r, c, false );
             setCell( r, c, "" );
         }
@@ -812,6 +927,7 @@ void GameWindow::reset( int level ){
     clear( this->mask );
     clear( this->gameMatrix );
     this->level = level;
+    initCells();
     initGame();
 }
 
@@ -826,86 +942,150 @@ void GameWindow::clear( int* arr ){
     }
 }
 
+/**
+ * should be what happens when all line edits blur
+ * @brief GameWindow::blur
+ * @param row
+ * @param col
+ */
+void GameWindow::blur( int row, int col ){
+    QString got = getCell( row, col );
+    int gotI = got.toInt();
+    setMask( row, col, gotI );
+    isSolved();
+}
+
+/**
+ * set the mask array at (row, col)
+ * @brief setMask
+ * @param row
+ * @param col
+ * @param set
+ */
+void GameWindow::setMask( int row, int col, int set ){
+    mask[ row * 9 + col ] = set;
+}
+
+/**
+ * is the game solved?
+ * @brief GameWindow::isSolved
+ * @return
+ */
+void GameWindow::isSolved(){
+    bool isOver = true;
+    for( int r = 0; r < 9; r++ ){
+        for( int c = 0; c < 9; c++ ){
+            if( mask[r * 9 + c] != gameMatrix[r * 9 + c] ){
+                isOver = false;
+            }
+        }
+    }
+
+    if( isOver ){
+        //you won
+        for( int r = 0; r < 9; r++ ){
+            for( int c = 0; c < 9; c++ ){
+                disconnectCell( r, c );
+            }
+        }
+        gameOver();
+    }
+}
+
+/**
+ * prints the you won dialog and opens the newgame dialog after you
+ * @brief GameWindow::gameOver
+ */
+void GameWindow::gameOver(){
+    QMessageBox::StandardButton reply;
+    int time = ( startTime.elapsed() / 1000 ) / 60;
+    QString msg = QString("You Won! It took you %1 minutes to finish. Start a new game?").arg( time );
+    reply = QMessageBox::question(this, tr("You Won!"), msg, QMessageBox::Yes | QMessageBox::No );
+    if (reply == QMessageBox::Yes) {
+        newGame();
+    }
+}
+
 //being lineedit slots
-void GameWindow::cell_0_0_blur(){qDebug()<< "cell_0_0 slot";}
-void GameWindow::cell_0_1_blur(){qDebug()<< "cell_0_1 slot";}
-void GameWindow::cell_0_2_blur(){qDebug()<< "cell_0_2 slot";}
-void GameWindow::cell_0_3_blur(){qDebug()<< "cell_0_3 slot";}
-void GameWindow::cell_0_4_blur(){qDebug()<< "cell_0_4 slot";}
-void GameWindow::cell_0_5_blur(){qDebug()<< "cell_0_5 slot";}
-void GameWindow::cell_0_6_blur(){qDebug()<< "cell_0_6 slot";}
-void GameWindow::cell_0_7_blur(){qDebug()<< "cell_0_7 slot";}
-void GameWindow::cell_0_8_blur(){qDebug()<< "cell_0_8 slot";}
-void GameWindow::cell_1_0_blur(){qDebug()<< "cell_1_0 slot";}
-void GameWindow::cell_1_1_blur(){qDebug()<< "cell_1_1 slot";}
-void GameWindow::cell_1_2_blur(){qDebug()<< "cell_1_2 slot";}
-void GameWindow::cell_1_3_blur(){qDebug()<< "cell_1_3 slot";}
-void GameWindow::cell_1_4_blur(){qDebug()<< "cell_1_4 slot";}
-void GameWindow::cell_1_5_blur(){qDebug()<< "cell_1_5 slot";}
-void GameWindow::cell_1_6_blur(){qDebug()<< "cell_1_6 slot";}
-void GameWindow::cell_1_7_blur(){qDebug()<< "cell_1_7 slot";}
-void GameWindow::cell_1_8_blur(){qDebug()<< "cell_1_8 slot";}
-void GameWindow::cell_2_0_blur(){qDebug()<< "cell_2_0 slot";}
-void GameWindow::cell_2_1_blur(){qDebug()<< "cell_2_1 slot";}
-void GameWindow::cell_2_2_blur(){qDebug()<< "cell_2_2 slot";}
-void GameWindow::cell_2_3_blur(){qDebug()<< "cell_2_3 slot";}
-void GameWindow::cell_2_4_blur(){qDebug()<< "cell_2_4 slot";}
-void GameWindow::cell_2_5_blur(){qDebug()<< "cell_2_5 slot";}
-void GameWindow::cell_2_6_blur(){qDebug()<< "cell_2_6 slot";}
-void GameWindow::cell_2_7_blur(){qDebug()<< "cell_2_7 slot";}
-void GameWindow::cell_2_8_blur(){qDebug()<< "cell_2_8 slot";}
-void GameWindow::cell_3_0_blur(){qDebug()<< "cell_3_0 slot";}
-void GameWindow::cell_3_1_blur(){qDebug()<< "cell_3_1 slot";}
-void GameWindow::cell_3_2_blur(){qDebug()<< "cell_3_2 slot";}
-void GameWindow::cell_3_3_blur(){qDebug()<< "cell_3_3 slot";}
-void GameWindow::cell_3_4_blur(){qDebug()<< "cell_3_4 slot";}
-void GameWindow::cell_3_5_blur(){qDebug()<< "cell_3_5 slot";}
-void GameWindow::cell_3_6_blur(){qDebug()<< "cell_3_6 slot";}
-void GameWindow::cell_3_7_blur(){qDebug()<< "cell_3_7 slot";}
-void GameWindow::cell_3_8_blur(){qDebug()<< "cell_3_8 slot";}
-void GameWindow::cell_4_0_blur(){qDebug()<< "cell_4_0 slot";}
-void GameWindow::cell_4_1_blur(){qDebug()<< "cell_4_1 slot";}
-void GameWindow::cell_4_2_blur(){qDebug()<< "cell_4_2 slot";}
-void GameWindow::cell_4_3_blur(){qDebug()<< "cell_4_3 slot";}
-void GameWindow::cell_4_4_blur(){qDebug()<< "cell_4_4 slot";}
-void GameWindow::cell_4_5_blur(){qDebug()<< "cell_4_5 slot";}
-void GameWindow::cell_4_6_blur(){qDebug()<< "cell_4_6 slot";}
-void GameWindow::cell_4_7_blur(){qDebug()<< "cell_4_7 slot";}
-void GameWindow::cell_4_8_blur(){qDebug()<< "cell_4_8 slot";}
-void GameWindow::cell_5_0_blur(){qDebug()<< "cell_5_0 slot";}
-void GameWindow::cell_5_1_blur(){qDebug()<< "cell_5_1 slot";}
-void GameWindow::cell_5_2_blur(){qDebug()<< "cell_5_2 slot";}
-void GameWindow::cell_5_3_blur(){qDebug()<< "cell_5_3 slot";}
-void GameWindow::cell_5_4_blur(){qDebug()<< "cell_5_4 slot";}
-void GameWindow::cell_5_5_blur(){qDebug()<< "cell_5_5 slot";}
-void GameWindow::cell_5_6_blur(){qDebug()<< "cell_5_6 slot";}
-void GameWindow::cell_5_7_blur(){qDebug()<< "cell_5_7 slot";}
-void GameWindow::cell_5_8_blur(){qDebug()<< "cell_5_8 slot";}
-void GameWindow::cell_6_0_blur(){qDebug()<< "cell_6_0 slot";}
-void GameWindow::cell_6_1_blur(){qDebug()<< "cell_6_1 slot";}
-void GameWindow::cell_6_2_blur(){qDebug()<< "cell_6_2 slot";}
-void GameWindow::cell_6_3_blur(){qDebug()<< "cell_6_3 slot";}
-void GameWindow::cell_6_4_blur(){qDebug()<< "cell_6_4 slot";}
-void GameWindow::cell_6_5_blur(){qDebug()<< "cell_6_5 slot";}
-void GameWindow::cell_6_6_blur(){qDebug()<< "cell_6_6 slot";}
-void GameWindow::cell_6_7_blur(){qDebug()<< "cell_6_7 slot";}
-void GameWindow::cell_6_8_blur(){qDebug()<< "cell_6_8 slot";}
-void GameWindow::cell_7_0_blur(){qDebug()<< "cell_7_0 slot";}
-void GameWindow::cell_7_1_blur(){qDebug()<< "cell_7_1 slot";}
-void GameWindow::cell_7_2_blur(){qDebug()<< "cell_7_2 slot";}
-void GameWindow::cell_7_3_blur(){qDebug()<< "cell_7_3 slot";}
-void GameWindow::cell_7_4_blur(){qDebug()<< "cell_7_4 slot";}
-void GameWindow::cell_7_5_blur(){qDebug()<< "cell_7_5 slot";}
-void GameWindow::cell_7_6_blur(){qDebug()<< "cell_7_6 slot";}
-void GameWindow::cell_7_7_blur(){qDebug()<< "cell_7_7 slot";}
-void GameWindow::cell_7_8_blur(){qDebug()<< "cell_7_8 slot";}
-void GameWindow::cell_8_0_blur(){qDebug()<< "cell_8_0 slot";}
-void GameWindow::cell_8_1_blur(){qDebug()<< "cell_8_1 slot";}
-void GameWindow::cell_8_2_blur(){qDebug()<< "cell_8_2 slot";}
-void GameWindow::cell_8_3_blur(){qDebug()<< "cell_8_3 slot";}
-void GameWindow::cell_8_4_blur(){qDebug()<< "cell_8_4 slot";}
-void GameWindow::cell_8_5_blur(){qDebug()<< "cell_8_5 slot";}
-void GameWindow::cell_8_6_blur(){qDebug()<< "cell_8_6 slot";}
-void GameWindow::cell_8_7_blur(){qDebug()<< "cell_8_7 slot";}
-void GameWindow::cell_8_8_blur(){qDebug()<< "cell_8_8 slot";}
+void GameWindow::cell_0_0_blur(){ blur( 0, 0); }
+void GameWindow::cell_0_1_blur(){ blur( 0, 1); }
+void GameWindow::cell_0_2_blur(){ blur( 0, 2); }
+void GameWindow::cell_0_3_blur(){ blur( 0, 3); }
+void GameWindow::cell_0_4_blur(){ blur( 0, 4); }
+void GameWindow::cell_0_5_blur(){ blur( 0, 5); }
+void GameWindow::cell_0_6_blur(){ blur( 0, 6); }
+void GameWindow::cell_0_7_blur(){ blur( 0, 7); }
+void GameWindow::cell_0_8_blur(){ blur( 0, 8); }
+void GameWindow::cell_1_0_blur(){ blur( 1, 0); }
+void GameWindow::cell_1_1_blur(){ blur( 1, 1); }
+void GameWindow::cell_1_2_blur(){ blur( 1, 2); }
+void GameWindow::cell_1_3_blur(){ blur( 1, 3); }
+void GameWindow::cell_1_4_blur(){ blur( 1, 4); }
+void GameWindow::cell_1_5_blur(){ blur( 1, 5); }
+void GameWindow::cell_1_6_blur(){ blur( 1, 6); }
+void GameWindow::cell_1_7_blur(){ blur( 1, 7); }
+void GameWindow::cell_1_8_blur(){ blur( 1, 8); }
+void GameWindow::cell_2_0_blur(){ blur( 2, 0); }
+void GameWindow::cell_2_1_blur(){ blur( 2, 1); }
+void GameWindow::cell_2_2_blur(){ blur( 2, 2); }
+void GameWindow::cell_2_3_blur(){ blur( 2, 3); }
+void GameWindow::cell_2_4_blur(){ blur( 2, 4); }
+void GameWindow::cell_2_5_blur(){ blur( 2, 5); }
+void GameWindow::cell_2_6_blur(){ blur( 2, 6); }
+void GameWindow::cell_2_7_blur(){ blur( 2, 7); }
+void GameWindow::cell_2_8_blur(){ blur( 2, 8); }
+void GameWindow::cell_3_0_blur(){ blur( 3, 0); }
+void GameWindow::cell_3_1_blur(){ blur( 3, 1); }
+void GameWindow::cell_3_2_blur(){ blur( 3, 2); }
+void GameWindow::cell_3_3_blur(){ blur( 3, 3); }
+void GameWindow::cell_3_4_blur(){ blur( 3, 4); }
+void GameWindow::cell_3_5_blur(){ blur( 3, 5); }
+void GameWindow::cell_3_6_blur(){ blur( 3, 6); }
+void GameWindow::cell_3_7_blur(){ blur( 3, 7); }
+void GameWindow::cell_3_8_blur(){ blur( 3, 8); }
+void GameWindow::cell_4_0_blur(){ blur( 4, 0); }
+void GameWindow::cell_4_1_blur(){ blur( 4, 1); }
+void GameWindow::cell_4_2_blur(){ blur( 4, 2); }
+void GameWindow::cell_4_3_blur(){ blur( 4, 3); }
+void GameWindow::cell_4_4_blur(){ blur( 4, 4); }
+void GameWindow::cell_4_5_blur(){ blur( 4, 5); }
+void GameWindow::cell_4_6_blur(){ blur( 4, 6); }
+void GameWindow::cell_4_7_blur(){ blur( 4, 7); }
+void GameWindow::cell_4_8_blur(){ blur( 4, 8); }
+void GameWindow::cell_5_0_blur(){ blur( 5, 0); }
+void GameWindow::cell_5_1_blur(){ blur( 5, 1); }
+void GameWindow::cell_5_2_blur(){ blur( 5, 2); }
+void GameWindow::cell_5_3_blur(){ blur( 5, 3); }
+void GameWindow::cell_5_4_blur(){ blur( 5, 4); }
+void GameWindow::cell_5_5_blur(){ blur( 5, 5); }
+void GameWindow::cell_5_6_blur(){ blur( 5, 6); }
+void GameWindow::cell_5_7_blur(){ blur( 5, 7); }
+void GameWindow::cell_5_8_blur(){ blur( 5, 8); }
+void GameWindow::cell_6_0_blur(){ blur( 6, 0); }
+void GameWindow::cell_6_1_blur(){ blur( 6, 1); }
+void GameWindow::cell_6_2_blur(){ blur( 6, 2); }
+void GameWindow::cell_6_3_blur(){ blur( 6, 3); }
+void GameWindow::cell_6_4_blur(){ blur( 6, 4); }
+void GameWindow::cell_6_5_blur(){ blur( 6, 5); }
+void GameWindow::cell_6_6_blur(){ blur( 6, 6); }
+void GameWindow::cell_6_7_blur(){ blur( 6, 7); }
+void GameWindow::cell_6_8_blur(){ blur( 6, 8); }
+void GameWindow::cell_7_0_blur(){ blur( 7, 0); }
+void GameWindow::cell_7_1_blur(){ blur( 7, 1); }
+void GameWindow::cell_7_2_blur(){ blur( 7, 2); }
+void GameWindow::cell_7_3_blur(){ blur( 7, 3); }
+void GameWindow::cell_7_4_blur(){ blur( 7, 4); }
+void GameWindow::cell_7_5_blur(){ blur( 7, 5); }
+void GameWindow::cell_7_6_blur(){ blur( 7, 6); }
+void GameWindow::cell_7_7_blur(){ blur( 7, 7); }
+void GameWindow::cell_7_8_blur(){ blur( 7, 8); }
+void GameWindow::cell_8_0_blur(){ blur( 8, 0); }
+void GameWindow::cell_8_1_blur(){ blur( 8, 1); }
+void GameWindow::cell_8_2_blur(){ blur( 8, 2); }
+void GameWindow::cell_8_3_blur(){ blur( 8, 3); }
+void GameWindow::cell_8_4_blur(){ blur( 8, 4); }
+void GameWindow::cell_8_5_blur(){ blur( 8, 5); }
+void GameWindow::cell_8_6_blur(){ blur( 8, 6); }
+void GameWindow::cell_8_7_blur(){ blur( 8, 7); }
+void GameWindow::cell_8_8_blur(){ blur( 8, 8); }
 //end lineedit slots
