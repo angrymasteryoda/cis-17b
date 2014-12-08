@@ -1,6 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-
+#include "save.h"
 #include "gamewindow.h"
 #include "howtodialog.h"
 #include <QtCore>
@@ -9,6 +9,8 @@
 MainWindow::MainWindow( QWidget *parent ) : QMainWindow( parent ), ui( new Ui::MainWindow ) {
     ui->setupUi(this);
     connect( ui->actionExit, SIGNAL( triggered() ), this, SLOT( close() ) );
+    connect( ui->actionLoad, SIGNAL( triggered() ), this, SLOT( on_pushButton_clicked() ) );
+    connect( ui->actionHow_to_play, SIGNAL( triggered() ), this, SLOT( on_howtoButton_clicked() ) );
 }
 
 MainWindow::~MainWindow()
@@ -54,10 +56,24 @@ void MainWindow::on_actionNew_Game_triggered() {
         else{
             level = 0xff;
         }
+
+        GameWindow *game = new GameWindow( 0, level );
+        game->show();
+        this->close();
     }
 
-    GameWindow *game = new GameWindow( 0, level );
-    game->show();
-    this->close();
     //on_newButton_clicked();
+}
+
+void MainWindow::on_pushButton_clicked() {
+    Settings settings( "save.ini" );
+    if( settings.load() ){
+        GameWindow *game = new GameWindow( 0, -1 );
+        game->show();
+        this->close();
+    }
+    else{
+        QMessageBox::StandardButton reply;
+        reply = QMessageBox::information(this, tr("No Save Game"), "You have no save game to load from.");
+    }
 }

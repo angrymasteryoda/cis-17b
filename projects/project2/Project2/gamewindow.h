@@ -102,16 +102,20 @@ private slots:
     void cell_8_8_blur();
     void showHelp();
     void newGame();
+    void save();
+    void saveExit();
 
 private:
     int level;
+    int timeLoad;
     int *gameMatrix;
     int *mask;
     int random( int max, int min = 0 );
     int *zeroFill( int );
+    int *jsonToArray( QString );
 
+    bool isLoadGame;
     bool isSolvable();
-    bool save();
 
     void gameOver();
     void disconnectCell( int row, int col );
@@ -128,8 +132,12 @@ private:
     void reset( int level );
     void clear( int* arr );
     void isSolved();
+    void copyArray( int*, const int* );
+    void load();
 
+    QString saveFile;
     QString getCell( int row, int col );
+    QString arrayToJson( int* );
 
     QTime startTime;
 

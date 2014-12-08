@@ -8,6 +8,7 @@ public:
     Settings( QString file, bool useDefault = false, QString defaultFile = "" );
     ~Settings();
 
+    bool load();
     bool loadSettings();
     void saveSetting( QString, QString );
 

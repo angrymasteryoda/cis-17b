@@ -5,6 +5,8 @@ INPUT(
 ./debug\howtodialog.o
 ./debug\database.o
 ./debug\settings.o
+./debug\save.o
+./debug\gamesave.o
 ./debug\moc_mainwindow.o
 ./debug\moc_gamewindow.o
 ./debug\moc_howtodialog.o

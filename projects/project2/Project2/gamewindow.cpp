@@ -2,6 +2,7 @@
 #include "ui_gamewindow.h"
 #include "mainwindow.h"
 #include "howtodialog.h"
+#include "save.h"
 
 #include <QDebug>
 #include <cmath>
@@ -10,18 +11,31 @@
 
 
 GameWindow::GameWindow( QWidget *parent, int level ) : QMainWindow( parent ), ui( new Ui::GameWindow ) {
-    this->level = level;
     ui->setupUi(this);
 
+    saveFile = "save.ini";
+    timeLoad = 0;
+    isLoadGame = false;
     connect( ui->actionExit, SIGNAL( triggered() ), this, SLOT( close() ) );
     connect( ui->actionHow_To_Play, SIGNAL( triggered() ), this, SLOT( showHelp() ) );
     connect( ui->actionNew_Game, SIGNAL( triggered() ), this, SLOT( newGame() ) );
+    connect( ui->actionSave, SIGNAL( triggered() ), this, SLOT( save() ) );
+    connect( ui->actionSave_and_Exit, SIGNAL( triggered() ), this, SLOT( saveExit() ) );
 
     //begin cell configs
-    gameMatrix = zeroFill( 81 );
-    mask = zeroFill( 81 );
-    initCells();
-    initGame();
+    if( level == -1 ){
+        //load
+        isLoadGame = true;
+        load();
+        startTime.start();
+        print();
+    } else {
+        this->level = level;
+        gameMatrix = zeroFill( 81 );
+        mask = zeroFill( 81 );
+        initCells();
+        initGame();
+    }
 }
 
 GameWindow::~GameWindow() {
@@ -214,14 +228,16 @@ void GameWindow::initCells(){
  */
 void GameWindow::initGame(){
     startTime.start();
-    for ( int i = 0; i < 9; i++ ) {
-        for ( int j = 0; j < 9; j++ ) {
-            gameMatrix[i * 9 + j] = (int) ( i * 3 + floor( i / 3 ) + j ) % 9 + 1;
+    if( !isLoadGame ){
+        for ( int i = 0; i < 9; i++ ) {
+            for ( int j = 0; j < 9; j++ ) {
+                gameMatrix[i * 9 + j] = (int) ( i * 3 + floor( i / 3 ) + j ) % 9 + 1;
+            }
         }
-    }
 
-    shuffle();
-    showNumbers();
+        shuffle();
+        showNumbers();
+    }
     print();
 }
 
@@ -322,14 +338,6 @@ void GameWindow::showNumbers(){
         qDebug() << "Made the problem to hard";
         showNumbers();
     }
-
-    for( int r = 0; r < 9; r++ ){
-        for( int c = 0; c < 9; c++ ){
-            if( mask[ r * 9 + c ] !=  0 ){
-                setReadOnly( r, c, true );
-            }
-        }
-    }
 }
 
 /**
@@ -385,6 +393,9 @@ void GameWindow::print( bool debug ){
     else {
         for ( int i = 0; i < 9; i++ ) {
             for ( int j = 0; j < 9; j++ ) {
+                if( mask[ i * 9 + j ] !=  0 ){
+                    setReadOnly( i, j, true );
+                }
                 setCell( i, j, mask[i * 9 + j] );
             }
         }
@@ -917,6 +928,8 @@ void GameWindow::newGame(){
  * @param level
  */
 void GameWindow::reset( int level ){
+    isLoadGame = false;
+    timeLoad = 0;
     for( int r = 0; r < 9; r++ ){
         for( int c = 0; c < 9; c++ ){
             disconnectCell( r, c );
@@ -998,12 +1011,83 @@ void GameWindow::isSolved(){
  */
 void GameWindow::gameOver(){
     QMessageBox::StandardButton reply;
-    int time = ( startTime.elapsed() / 1000 ) / 60;
+    int time = ( ( timeLoad + startTime.elapsed() ) / 1000 ) / 60;
     QString msg = QString("You Won! It took you %1 minutes to finish. Start a new game?").arg( time );
     reply = QMessageBox::question(this, tr("You Won!"), msg, QMessageBox::Yes | QMessageBox::No );
     if (reply == QMessageBox::Yes) {
         newGame();
     }
+}
+
+/**
+ * saves the game to save.ini
+ * @brief GameWindow::save
+ */
+void GameWindow::save(){
+    Settings settings( saveFile, true );
+    settings.load();
+    if( settings.getIsLoaded() ){
+        int time = ( startTime.elapsed() );
+        settings.saveSetting( "mask", arrayToJson( mask ) );
+        settings.saveSetting( "board", arrayToJson( gameMatrix ) );
+        settings.saveSetting( "time", QString::number( time ) );
+        settings.saveSetting( "level", QString::number( level ) );
+    }
+}
+
+/**
+ * transforms a int array into a json string
+ * @brief GameWindow::arrayToJson
+ * @param array
+ * @return
+ */
+QString GameWindow::arrayToJson( int *array ){
+    int boardSize = 81;
+    QString str = "[";
+    for( int i = 0; i < boardSize; i++ ){
+        str.append( QString::number( array[i] ) );
+        if( i < boardSize - 1 ){
+            str += ",";
+        }
+    }
+    str.append( "]" );
+    return str;
+}
+
+/**
+ * returns an int array from a json string
+ * @brief Save::jsonToArray
+ * @param str
+ * @return
+ */
+int* GameWindow::jsonToArray( QString str ){
+    str = str.replace( QRegExp( "\\[([0-9,]+)\\]" ), "\\1" );
+    QStringList list = str.split( "," );
+    int* res = new int[ list.size() ];
+    for( int i = 0; i < list.size(); i++ ){
+        res[i] = list[i].toInt();
+    }
+    return res;
+}
+
+/**
+ * load the game from file if one exists no error checking it MUST be right in the file
+ * @brief GameWindow::load
+ */
+void GameWindow::load(){
+    Settings settings( saveFile );
+    settings.load();
+    if( settings.getIsLoaded() ){
+        gameMatrix = jsonToArray( settings.getSetting( "board" ) );
+        mask = jsonToArray( settings.getSetting( "mask" ) );
+        level = settings.getSetting( "level" ).toInt();
+        timeLoad = settings.getSetting( "time" ).toInt();
+    }
+}
+
+void GameWindow::saveExit(){
+    save();
+    exit(0);
 }
 
 //being lineedit slots

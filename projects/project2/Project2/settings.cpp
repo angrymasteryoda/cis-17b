@@ -23,15 +23,22 @@
 Settings::Settings( QString file, bool useDefault, QString defaultFile ) {
     filename = file;
     QFile configFile( filename );
-    qDebug() << configFile.exists();
     if( !configFile.exists() && useDefault ){
-        if ( !QFile::copy( defaultFile, filename ) ) {
-            qDebug() << "file exists shit broke";
-        } else{
-            //it coppied make it writable
+        QFile fallback( defaultFile );
+        if( !fallback.exists() ){
+            qDebug() << "Creating fallback";
+            configFile.open( QFile::WriteOnly );
             configFile.setPermissions( QFile::WriteOther );
+            configFile.close();
+        } else {
+            if ( !QFile::copy( defaultFile, filename ) ) {
+                qDebug() << "file exists shit broke";
+            } else{
+                //it coppied make it writable
+                configFile.setPermissions( QFile::WriteOther );
+            }
         }
-
+        fallback.close();
     }
     else if ( !configFile.exists() && !useDefault ){
         qDebug() << "No file to load, not loading fallback";
@@ -50,10 +57,10 @@ Settings::~Settings() {
 
 /**
  * load the settings and save them into a map
- * @brief Settings::loadSettings
+ * @brief Settings::load
  * @return isLoaded
  */
-bool Settings::loadSettings(){
+bool Settings::load(){
     QFile configFile( filename );
     if( configFile.exists() ){
         const QStringList childKeys = qSettings->childKeys();
@@ -67,6 +74,16 @@ bool Settings::loadSettings(){
     }
     configFile.close();
     return isLoaded;
+}
+
+/**
+ * load the settings and save them into a map
+ * @deprecated 12/07/2014
+ * @brief Settings::loadSettings
+ * @return isLoaded
+ */
+bool Settings::loadSettings(){
+    return load();
 }
 
 /**

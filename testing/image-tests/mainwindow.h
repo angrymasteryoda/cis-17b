@@ -1,6 +1,9 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include <QNetworkAccessManager>
+#include <QNetworkRequest>
+#include <QNetworkReply>
 #include <QMainWindow>
 
 namespace Ui {
@@ -11,18 +14,13 @@ class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
+private slots:
+    void test( QNetworkReply* );
+    void on_label_2_linkActivated(const QString &link);
+
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
-
-private slots:
-    void on_newButton_clicked();
-
-    void on_howtoButton_clicked();
-
-    void on_actionNew_Game_triggered();
-
-    void on_pushButton_clicked();
 
 private:
     Ui::MainWindow *ui;

@@ -33,6 +33,8 @@ public:
     QAction *actionSave;
     QAction *actionSaveExit;
     QAction *actionExit;
+    QAction *actionLoad;
+    QAction *actionHow_to_play;
     QWidget *centralwidget;
     QLabel *titleLabel;
     QWidget *gridLayoutWidget;
@@ -43,6 +45,7 @@ public:
     QPushButton *howtoButton;
     QMenuBar *menubar;
     QMenu *menuFile;
+    QMenu *menuHelp;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *MainWindow)
@@ -67,6 +70,10 @@ public:
         actionSaveExit->setEnabled(false);
         actionExit = new QAction(MainWindow);
         actionExit->setObjectName(QString::fromUtf8("actionExit"));
+        actionLoad = new QAction(MainWindow);
+        actionLoad->setObjectName(QString::fromUtf8("actionLoad"));
+        actionHow_to_play = new QAction(MainWindow);
+        actionHow_to_play->setObjectName(QString::fromUtf8("actionHow_to_play"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         titleLabel = new QLabel(centralwidget);
@@ -111,17 +118,22 @@ public:
         menubar->setGeometry(QRect(0, 0, 650, 21));
         menuFile = new QMenu(menubar);
         menuFile->setObjectName(QString::fromUtf8("menuFile"));
+        menuHelp = new QMenu(menubar);
+        menuHelp->setObjectName(QString::fromUtf8("menuHelp"));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
         MainWindow->setStatusBar(statusbar);
 
         menubar->addAction(menuFile->menuAction());
+        menubar->addAction(menuHelp->menuAction());
         menuFile->addAction(actionNew_Game);
+        menuFile->addAction(actionLoad);
         menuFile->addAction(actionSave);
         menuFile->addSeparator();
         menuFile->addAction(actionSaveExit);
         menuFile->addAction(actionExit);
+        menuHelp->addAction(actionHow_to_play);
 
         retranslateUi(MainWindow);
 
@@ -137,6 +149,9 @@ public:
         actionSave->setShortcut(QApplication::translate("MainWindow", "Ctrl+S", 0, QApplication::UnicodeUTF8));
         actionSaveExit->setText(QApplication::translate("MainWindow", "Save and Exit", 0, QApplication::UnicodeUTF8));
         actionExit->setText(QApplication::translate("MainWindow", "Exit", 0, QApplication::UnicodeUTF8));
+        actionLoad->setText(QApplication::translate("MainWindow", "Load", 0, QApplication::UnicodeUTF8));
+        actionLoad->setShortcut(QApplication::translate("MainWindow", "Ctrl+O", 0, QApplication::UnicodeUTF8));
+        actionHow_to_play->setText(QApplication::translate("MainWindow", "How to play", 0, QApplication::UnicodeUTF8));
         titleLabel->setText(QApplication::translate("MainWindow", "Sudoku", 0, QApplication::UnicodeUTF8));
         difficultyCombo->clear();
         difficultyCombo->insertItems(0, QStringList()
@@ -149,6 +164,7 @@ public:
         pushButton->setText(QApplication::translate("MainWindow", "Continue", 0, QApplication::UnicodeUTF8));
         howtoButton->setText(QApplication::translate("MainWindow", "How to Play", 0, QApplication::UnicodeUTF8));
         menuFile->setTitle(QApplication::translate("MainWindow", "File", 0, QApplication::UnicodeUTF8));
+        menuHelp->setTitle(QApplication::translate("MainWindow", "Help", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };
