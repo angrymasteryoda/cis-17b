@@ -1,0 +1,185 @@
+\hypertarget{class_settings}{\section{Settings Class Reference}
+\label{class_settings}\index{Settings@{Settings}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_settings_ae2fdda176f95e68511a7fff150330e27}{Settings} (Q\+String file, bool use\+Default=false, Q\+String default\+File=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_settings_ae2fdda176f95e68511a7fff150330e27}{Settings\+::\+Settings}. \end{DoxyCompactList}\item 
+\hypertarget{class_settings_a4a65be5921dfc9fddc476e5320541d89}{\hyperlink{class_settings_a4a65be5921dfc9fddc476e5320541d89}{$\sim$\+Settings} ()}\label{class_settings_a4a65be5921dfc9fddc476e5320541d89}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_settings_a4a65be5921dfc9fddc476e5320541d89}{Settings\+::$\sim$\+Settings}. \end{DoxyCompactList}\item 
+bool \hyperlink{class_settings_a06d1d58938c8fdc7a577e52f9ffda29d}{load} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_settings_a06d1d58938c8fdc7a577e52f9ffda29d}{Settings\+::load}. \end{DoxyCompactList}\item 
+bool \hyperlink{class_settings_a2d965ef0a054b61050811b416c896ed4}{load\+Settings} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_settings_a2d965ef0a054b61050811b416c896ed4}{Settings\+::load\+Settings}. \end{DoxyCompactList}\item 
+void \hyperlink{class_settings_ac17de21379552ef437d94e01e94a0331}{save\+Setting} (Q\+String, Q\+String)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_settings_ac17de21379552ef437d94e01e94a0331}{Settings\+::save\+Setting}. \end{DoxyCompactList}\item 
+Q\+String \hyperlink{class_settings_a9a1d774542aba721bec9cf1ebb086b84}{get\+Setting} (Q\+String)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_settings_a9a1d774542aba721bec9cf1ebb086b84}{Settings\+::get\+Setting}. \end{DoxyCompactList}\item 
+Q\+Map$<$ Q\+String, Q\+String $>$ \hyperlink{class_settings_a3b407c7af1bff73221a8fa25be6b3860}{get\+Settings} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_settings_a3b407c7af1bff73221a8fa25be6b3860}{Settings\+::get\+Settings}. \end{DoxyCompactList}\item 
+bool \hyperlink{class_settings_a8cf925a493600b52b80f75a50b850eac}{get\+Is\+Loaded} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_settings_a8cf925a493600b52b80f75a50b850eac}{Settings\+::get\+Is\+Loaded}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_settings_ae2fdda176f95e68511a7fff150330e27}{\index{Settings@{Settings}!Settings@{Settings}}
+\index{Settings@{Settings}!Settings@{Settings}}
+\subsubsection[{Settings}]{\setlength{\rightskip}{0pt plus 5cm}Settings\+::\+Settings (
+\begin{DoxyParamCaption}
+\item[{Q\+String}]{file, }
+\item[{bool}]{use\+Default = {\ttfamily false}, }
+\item[{Q\+String}]{default\+File = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)}}\label{class_settings_ae2fdda176f95e68511a7fff150330e27}
+
+
+\hyperlink{class_settings_ae2fdda176f95e68511a7fff150330e27}{Settings\+::\+Settings}. 
+
+to use settings follow this rough pattern \hyperlink{class_settings}{Settings} settings( app.\+application\+Dir\+Path() + \char`\"{}/config.\+ini\char`\"{}, true, \char`\"{}\+:/res/config/config.\+ini\char`\"{} ); settings.\+load\+Settings();
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & (can not be in the resource folder) \\
+\hline
+{\em use\+Default} & ( if true will copy the config file from default location to new file) \\
+\hline
+{\em default\+File} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_settings_a8cf925a493600b52b80f75a50b850eac}{\index{Settings@{Settings}!get\+Is\+Loaded@{get\+Is\+Loaded}}
+\index{get\+Is\+Loaded@{get\+Is\+Loaded}!Settings@{Settings}}
+\subsubsection[{get\+Is\+Loaded}]{\setlength{\rightskip}{0pt plus 5cm}bool Settings\+::get\+Is\+Loaded (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_settings_a8cf925a493600b52b80f75a50b850eac}
+
+
+\hyperlink{class_settings_a8cf925a493600b52b80f75a50b850eac}{Settings\+::get\+Is\+Loaded}. 
+
+are the settings loading \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{class_settings_a9a1d774542aba721bec9cf1ebb086b84}{\index{Settings@{Settings}!get\+Setting@{get\+Setting}}
+\index{get\+Setting@{get\+Setting}!Settings@{Settings}}
+\subsubsection[{get\+Setting}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Settings\+::get\+Setting (
+\begin{DoxyParamCaption}
+\item[{Q\+String}]{key}
+\end{DoxyParamCaption}
+)}}\label{class_settings_a9a1d774542aba721bec9cf1ebb086b84}
+
+
+\hyperlink{class_settings_a9a1d774542aba721bec9cf1ebb086b84}{Settings\+::get\+Setting}. 
+
+get a value from the settings map 
+\begin{DoxyParams}{Parameters}
+{\em key} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Q\+String value 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\+:
+
+
+\hypertarget{class_settings_a3b407c7af1bff73221a8fa25be6b3860}{\index{Settings@{Settings}!get\+Settings@{get\+Settings}}
+\index{get\+Settings@{get\+Settings}!Settings@{Settings}}
+\subsubsection[{get\+Settings}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Map$<$ Q\+String, Q\+String $>$ Settings\+::get\+Settings (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_settings_a3b407c7af1bff73221a8fa25be6b3860}
+
+
+\hyperlink{class_settings_a3b407c7af1bff73221a8fa25be6b3860}{Settings\+::get\+Settings}. 
+
+get the settings map \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\+:
+
+
+\hypertarget{class_settings_a06d1d58938c8fdc7a577e52f9ffda29d}{\index{Settings@{Settings}!load@{load}}
+\index{load@{load}!Settings@{Settings}}
+\subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}bool Settings\+::load (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_settings_a06d1d58938c8fdc7a577e52f9ffda29d}
+
+
+\hyperlink{class_settings_a06d1d58938c8fdc7a577e52f9ffda29d}{Settings\+::load}. 
+
+load the settings and save them into a map \begin{DoxyReturn}{Returns}
+is\+Loaded 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\+:
+
+
+\hypertarget{class_settings_a2d965ef0a054b61050811b416c896ed4}{\index{Settings@{Settings}!load\+Settings@{load\+Settings}}
+\index{load\+Settings@{load\+Settings}!Settings@{Settings}}
+\subsubsection[{load\+Settings}]{\setlength{\rightskip}{0pt plus 5cm}bool Settings\+::load\+Settings (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_settings_a2d965ef0a054b61050811b416c896ed4}
+
+
+\hyperlink{class_settings_a2d965ef0a054b61050811b416c896ed4}{Settings\+::load\+Settings}. 
+
+load the settings and save them into a map \begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000002}{Deprecated}]12/07/2014 \end{DoxyRefDesc}
+\begin{DoxyReturn}{Returns}
+is\+Loaded 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\+:
+
+
+
+
+Here is the caller graph for this function\+:
+
+
+\hypertarget{class_settings_ac17de21379552ef437d94e01e94a0331}{\index{Settings@{Settings}!save\+Setting@{save\+Setting}}
+\index{save\+Setting@{save\+Setting}!Settings@{Settings}}
+\subsubsection[{save\+Setting}]{\setlength{\rightskip}{0pt plus 5cm}void Settings\+::save\+Setting (
+\begin{DoxyParamCaption}
+\item[{Q\+String}]{key, }
+\item[{Q\+String}]{value}
+\end{DoxyParamCaption}
+)}}\label{class_settings_ac17de21379552ef437d94e01e94a0331}
+
+
+\hyperlink{class_settings_ac17de21379552ef437d94e01e94a0331}{Settings\+::save\+Setting}. 
+
+change a setting and save it to the file 
+\begin{DoxyParams}{Parameters}
+{\em key} & \\
+\hline
+{\em value} & \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\+:
+
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+settings.\+h\item 
+settings.\+cpp\end{DoxyCompactItemize}

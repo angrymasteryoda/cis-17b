@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>Sudoku: database.h Source File</title>
+<title>Project 2: database.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -29,7 +29,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Sudoku
+   <div id="projectname">Project 2
    </div>
   </td>
  </tr>
@@ -44,6 +44,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -89,7 +90,7 @@ $(document).ready(function(){initNavTree('database_8h_source.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -107,43 +108,60 @@ $(document).ready(function(){initNavTree('database_8h_source.html','');});
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define DATABASE_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QtCore&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;QtSql/QSqlDatabase&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;QtSql&gt;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
 <div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="class_database.html">    7</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_database.html">Database</a> {</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <a class="code" href="class_database.html">Database</a>();</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <a class="code" href="class_database.html">Database</a>( QString, QString, QString, QString );</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <a class="code" href="class_database.html">Database</a>( QString, QString, QString, QString, QString driver = <span class="stringliteral">&quot;QMYSQL&quot;</span> );</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    QSqlDatabase getDb();</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    QSqlDatabase <a class="code" href="class_database.html#a2925e696474bdfc43a46f7142e2975ea">getDb</a>();</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_database.html#ac314f58ea7be59d587d60f3ece8892f9">init</a>( QString, QString, QString, QString );</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    QString getHostname() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">void</span> setHostname(<span class="keyword">const</span> QString &amp;value);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    QString getUser() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">void</span> setUser(<span class="keyword">const</span> QString &amp;value);</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    QString getPassword() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">void</span> setPassword(<span class="keyword">const</span> QString &amp;value);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    QString getDbName() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">void</span> setDbName(<span class="keyword">const</span> QString &amp;value);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    QString hostname;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    QString user;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    QString password;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    QString dbName;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;};</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#endif // DATABASE_H</span></div>
-<div class="ttc" id="class_database_html_ac314f58ea7be59d587d60f3ece8892f9"><div class="ttname"><a href="class_database.html#ac314f58ea7be59d587d60f3ece8892f9">Database::init</a></div><div class="ttdeci">void init(QString, QString, QString, QString)</div><div class="ttdoc">Database::init. </div><div class="ttdef"><b>Definition:</b> database.cpp:24</div></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_database.html#ad0447f050ca5dc97360d3fda62736d4d">init</a>( QString, QString, QString, QString, QString driver = <span class="stringliteral">&quot;QMYSQL&quot;</span> );</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_database.html#ab89cb07242f0ab1d4058974bf3e7cf19">close</a>();</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_database.html#ad781c19d9df89124b0d1a35d33391b75">connect</a>();</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_database.html#aff8b507168f3db678fed64344ae5c12e">connectionOpen</a>();</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_database.html#a16e3a424915bed9bd3abd862882a103e">testConnection</a>();</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_database.html#a416c55ad768fa9243de088a6ea9c1e57">createTable</a>( QString );</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="comment">//bool insertToTable( QString );</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    QString <a class="code" href="class_database.html#a90e5d9b7a53c3cabfaa04f7dd2eae720">connectionInfo</a>();</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    QString getHostname() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">void</span> setHostname(<span class="keyword">const</span> QString &amp;value);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    QString getUser() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">void</span> setUser(<span class="keyword">const</span> QString &amp;value);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    QString getPassword() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">void</span> setPassword(<span class="keyword">const</span> QString &amp;value);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    QString getDbName() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">void</span> setDbName(<span class="keyword">const</span> QString &amp;value);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    QString hostname;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    QString user;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    QString password;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    QString dbName;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    QString driver;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    QSqlDatabase db;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;};</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#endif // DATABASE_H</span></div>
+<div class="ttc" id="class_database_html_a90e5d9b7a53c3cabfaa04f7dd2eae720"><div class="ttname"><a href="class_database.html#a90e5d9b7a53c3cabfaa04f7dd2eae720">Database::connectionInfo</a></div><div class="ttdeci">QString connectionInfo()</div><div class="ttdoc">Database::connectionInfo. </div><div class="ttdef"><b>Definition:</b> database.cpp:131</div></div>
+<div class="ttc" id="class_database_html_ad781c19d9df89124b0d1a35d33391b75"><div class="ttname"><a href="class_database.html#ad781c19d9df89124b0d1a35d33391b75">Database::connect</a></div><div class="ttdeci">bool connect()</div><div class="ttdoc">Database::connect. </div><div class="ttdef"><b>Definition:</b> database.cpp:55</div></div>
+<div class="ttc" id="class_database_html_ad0447f050ca5dc97360d3fda62736d4d"><div class="ttname"><a href="class_database.html#ad0447f050ca5dc97360d3fda62736d4d">Database::init</a></div><div class="ttdeci">void init(QString, QString, QString, QString, QString driver=&quot;QMYSQL&quot;)</div><div class="ttdoc">Database::init. </div><div class="ttdef"><b>Definition:</b> database.cpp:27</div></div>
+<div class="ttc" id="class_database_html_a416c55ad768fa9243de088a6ea9c1e57"><div class="ttname"><a href="class_database.html#a416c55ad768fa9243de088a6ea9c1e57">Database::createTable</a></div><div class="ttdeci">bool createTable(QString)</div><div class="ttdoc">Database::createTable. </div><div class="ttdef"><b>Definition:</b> database.cpp:93</div></div>
 <div class="ttc" id="class_database_html"><div class="ttname"><a href="class_database.html">Database</a></div><div class="ttdef"><b>Definition:</b> database.h:7</div></div>
+<div class="ttc" id="class_database_html_aff8b507168f3db678fed64344ae5c12e"><div class="ttname"><a href="class_database.html#aff8b507168f3db678fed64344ae5c12e">Database::connectionOpen</a></div><div class="ttdeci">bool connectionOpen()</div><div class="ttdoc">Database::connectionOpen. </div><div class="ttdef"><b>Definition:</b> database.cpp:84</div></div>
+<div class="ttc" id="class_database_html_ab89cb07242f0ab1d4058974bf3e7cf19"><div class="ttname"><a href="class_database.html#ab89cb07242f0ab1d4058974bf3e7cf19">Database::close</a></div><div class="ttdeci">void close()</div><div class="ttdoc">Database::close. </div><div class="ttdef"><b>Definition:</b> database.cpp:73</div></div>
+<div class="ttc" id="class_database_html_a2925e696474bdfc43a46f7142e2975ea"><div class="ttname"><a href="class_database.html#a2925e696474bdfc43a46f7142e2975ea">Database::getDb</a></div><div class="ttdeci">QSqlDatabase getDb()</div><div class="ttdoc">Database::getDb. </div><div class="ttdef"><b>Definition:</b> database.cpp:40</div></div>
+<div class="ttc" id="class_database_html_a16e3a424915bed9bd3abd862882a103e"><div class="ttname"><a href="class_database.html#a16e3a424915bed9bd3abd862882a103e">Database::testConnection</a></div><div class="ttdeci">bool testConnection()</div><div class="ttdoc">Database::testConnection. </div><div class="ttdef"><b>Definition:</b> database.cpp:113</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><b>database.h</b></li>
-    <li class="footer">Generated on Mon Nov 17 2014 14:02:42 for Sudoku by
+    <li class="footer">Generated on Sun Dec 7 2014 17:30:58 for Project 2 by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

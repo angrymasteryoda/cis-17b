@@ -8,5 +8,6 @@ var hierarchy =
     [ "QMainWindow", null, [
       [ "GameWindow", "class_game_window.html", null ],
       [ "MainWindow", "class_main_window.html", null ]
-    ] ]
+    ] ],
+    [ "Settings", "class_settings.html", null ]
 ];

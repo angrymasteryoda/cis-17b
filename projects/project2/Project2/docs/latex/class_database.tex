@@ -4,14 +4,25 @@
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{class_database_a5d8bbb846ab518f7f3972124cbb1d867}{{\bfseries Database} (Q\+String, Q\+String, Q\+String, Q\+String)}\label{class_database_a5d8bbb846ab518f7f3972124cbb1d867}
+\hypertarget{class_database_aae309ecd574119ae26ea06e45fc663d8}{{\bfseries Database} (Q\+String, Q\+String, Q\+String, Q\+String, Q\+String driver=\char`\"{}Q\+M\+Y\+S\+Q\+L\char`\"{})}\label{class_database_aae309ecd574119ae26ea06e45fc663d8}
 
 \item 
-\hypertarget{class_database_a2925e696474bdfc43a46f7142e2975ea}{Q\+Sql\+Database {\bfseries get\+Db} ()}\label{class_database_a2925e696474bdfc43a46f7142e2975ea}
-
-\item 
-void \hyperlink{class_database_ac314f58ea7be59d587d60f3ece8892f9}{init} (Q\+String, Q\+String, Q\+String, Q\+String)
-\begin{DoxyCompactList}\small\item\em \hyperlink{class_database_ac314f58ea7be59d587d60f3ece8892f9}{Database\+::init}. \end{DoxyCompactList}\item 
+Q\+Sql\+Database \hyperlink{class_database_a2925e696474bdfc43a46f7142e2975ea}{get\+Db} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_database_a2925e696474bdfc43a46f7142e2975ea}{Database\+::get\+Db}. \end{DoxyCompactList}\item 
+void \hyperlink{class_database_ad0447f050ca5dc97360d3fda62736d4d}{init} (Q\+String, Q\+String, Q\+String, Q\+String, Q\+String driver=\char`\"{}Q\+M\+Y\+S\+Q\+L\char`\"{})
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_database_ad0447f050ca5dc97360d3fda62736d4d}{Database\+::init}. \end{DoxyCompactList}\item 
+void \hyperlink{class_database_ab89cb07242f0ab1d4058974bf3e7cf19}{close} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_database_ab89cb07242f0ab1d4058974bf3e7cf19}{Database\+::close}. \end{DoxyCompactList}\item 
+bool \hyperlink{class_database_ad781c19d9df89124b0d1a35d33391b75}{connect} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_database_ad781c19d9df89124b0d1a35d33391b75}{Database\+::connect}. \end{DoxyCompactList}\item 
+bool \hyperlink{class_database_aff8b507168f3db678fed64344ae5c12e}{connection\+Open} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_database_aff8b507168f3db678fed64344ae5c12e}{Database\+::connection\+Open}. \end{DoxyCompactList}\item 
+bool \hyperlink{class_database_a16e3a424915bed9bd3abd862882a103e}{test\+Connection} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_database_a16e3a424915bed9bd3abd862882a103e}{Database\+::test\+Connection}. \end{DoxyCompactList}\item 
+bool \hyperlink{class_database_a416c55ad768fa9243de088a6ea9c1e57}{create\+Table} (Q\+String)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_database_a416c55ad768fa9243de088a6ea9c1e57}{Database\+::create\+Table}. \end{DoxyCompactList}\item 
+Q\+String \hyperlink{class_database_a90e5d9b7a53c3cabfaa04f7dd2eae720}{connection\+Info} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_database_a90e5d9b7a53c3cabfaa04f7dd2eae720}{Database\+::connection\+Info}. \end{DoxyCompactList}\item 
 \hypertarget{class_database_a91a1c183ac9952a171aba2229e711ebd}{Q\+String {\bfseries get\+Hostname} () const }\label{class_database_a91a1c183ac9952a171aba2229e711ebd}
 
 \item 
@@ -39,19 +50,133 @@ void \hyperlink{class_database_ac314f58ea7be59d587d60f3ece8892f9}{init} (Q\+Stri
 
 
 \subsection{Member Function Documentation}
-\hypertarget{class_database_ac314f58ea7be59d587d60f3ece8892f9}{\index{Database@{Database}!init@{init}}
+\hypertarget{class_database_ab89cb07242f0ab1d4058974bf3e7cf19}{\index{Database@{Database}!close@{close}}
+\index{close@{close}!Database@{Database}}
+\subsubsection[{close}]{\setlength{\rightskip}{0pt plus 5cm}void Database\+::close (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_database_ab89cb07242f0ab1d4058974bf3e7cf19}
+
+
+\hyperlink{class_database_ab89cb07242f0ab1d4058974bf3e7cf19}{Database\+::close}. 
+
+close the connection 
+
+Here is the caller graph for this function\+:
+
+
+\hypertarget{class_database_ad781c19d9df89124b0d1a35d33391b75}{\index{Database@{Database}!connect@{connect}}
+\index{connect@{connect}!Database@{Database}}
+\subsubsection[{connect}]{\setlength{\rightskip}{0pt plus 5cm}bool Database\+::connect (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_database_ad781c19d9df89124b0d1a35d33391b75}
+
+
+\hyperlink{class_database_ad781c19d9df89124b0d1a35d33391b75}{Database\+::connect}. 
+
+try to connect to the database \begin{DoxyReturn}{Returns}
+false if failed 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\+:
+
+
+
+
+Here is the caller graph for this function\+:
+
+
+\hypertarget{class_database_a90e5d9b7a53c3cabfaa04f7dd2eae720}{\index{Database@{Database}!connection\+Info@{connection\+Info}}
+\index{connection\+Info@{connection\+Info}!Database@{Database}}
+\subsubsection[{connection\+Info}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Database\+::connection\+Info (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_database_a90e5d9b7a53c3cabfaa04f7dd2eae720}
+
+
+\hyperlink{class_database_a90e5d9b7a53c3cabfaa04f7dd2eae720}{Database\+::connection\+Info}. 
+
+for debuging \begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000001}{Deprecated}]\end{DoxyRefDesc}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{class_database_aff8b507168f3db678fed64344ae5c12e}{\index{Database@{Database}!connection\+Open@{connection\+Open}}
+\index{connection\+Open@{connection\+Open}!Database@{Database}}
+\subsubsection[{connection\+Open}]{\setlength{\rightskip}{0pt plus 5cm}bool Database\+::connection\+Open (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_database_aff8b507168f3db678fed64344ae5c12e}
+
+
+\hyperlink{class_database_aff8b507168f3db678fed64344ae5c12e}{Database\+::connection\+Open}. 
+
+checks if the database is connected \begin{DoxyReturn}{Returns}
+true if a connection is open 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\+:
+
+
+\hypertarget{class_database_a416c55ad768fa9243de088a6ea9c1e57}{\index{Database@{Database}!create\+Table@{create\+Table}}
+\index{create\+Table@{create\+Table}!Database@{Database}}
+\subsubsection[{create\+Table}]{\setlength{\rightskip}{0pt plus 5cm}bool Database\+::create\+Table (
+\begin{DoxyParamCaption}
+\item[{Q\+String}]{statement}
+\end{DoxyParamCaption}
+)}}\label{class_database_a416c55ad768fa9243de088a6ea9c1e57}
+
+
+\hyperlink{class_database_a416c55ad768fa9243de088a6ea9c1e57}{Database\+::create\+Table}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em statement} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\+:
+
+
+\hypertarget{class_database_a2925e696474bdfc43a46f7142e2975ea}{\index{Database@{Database}!get\+Db@{get\+Db}}
+\index{get\+Db@{get\+Db}!Database@{Database}}
+\subsubsection[{get\+Db}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Sql\+Database Database\+::get\+Db (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_database_a2925e696474bdfc43a46f7142e2975ea}
+
+
+\hyperlink{class_database_a2925e696474bdfc43a46f7142e2975ea}{Database\+::get\+Db}. 
+
+Get a database object so you can open it yourself \begin{DoxyReturn}{Returns}
+databse 
+\end{DoxyReturn}
+\hypertarget{class_database_ad0447f050ca5dc97360d3fda62736d4d}{\index{Database@{Database}!init@{init}}
 \index{init@{init}!Database@{Database}}
 \subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}void Database\+::init (
 \begin{DoxyParamCaption}
 \item[{Q\+String}]{host, }
 \item[{Q\+String}]{db\+Name, }
 \item[{Q\+String}]{user, }
-\item[{Q\+String}]{pass}
+\item[{Q\+String}]{pass, }
+\item[{Q\+String}]{driver = {\ttfamily \char`\"{}QMYSQL\char`\"{}}}
 \end{DoxyParamCaption}
-)}}\label{class_database_ac314f58ea7be59d587d60f3ece8892f9}
+)}}\label{class_database_ad0447f050ca5dc97360d3fda62736d4d}
 
 
-\hyperlink{class_database_ac314f58ea7be59d587d60f3ece8892f9}{Database\+::init}. 
+\hyperlink{class_database_ad0447f050ca5dc97360d3fda62736d4d}{Database\+::init}. 
 
 sets all the values also basically a bug fix 
 \begin{DoxyParams}{Parameters}
@@ -64,6 +189,25 @@ sets all the values also basically a bug fix
 {\em pass} & \\
 \hline
 \end{DoxyParams}
+\hypertarget{class_database_a16e3a424915bed9bd3abd862882a103e}{\index{Database@{Database}!test\+Connection@{test\+Connection}}
+\index{test\+Connection@{test\+Connection}!Database@{Database}}
+\subsubsection[{test\+Connection}]{\setlength{\rightskip}{0pt plus 5cm}bool Database\+::test\+Connection (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_database_a16e3a424915bed9bd3abd862882a103e}
+
+
+\hyperlink{class_database_a16e3a424915bed9bd3abd862882a103e}{Database\+::test\+Connection}. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\+:
+
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
