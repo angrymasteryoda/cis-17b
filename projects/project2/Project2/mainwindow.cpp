@@ -1,8 +1,8 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "save.h"
 #include "gamewindow.h"
 #include "howtodialog.h"
+#include "settings.h"
 #include <QtCore>
 #include <QtGui>
 

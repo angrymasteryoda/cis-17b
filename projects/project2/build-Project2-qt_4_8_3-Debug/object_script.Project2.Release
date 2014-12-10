@@ -5,8 +5,6 @@ INPUT(
 ./release\howtodialog.o
 ./release\database.o
 ./release\settings.o
-./release\save.o
-./release\gamesave.o
 ./release\moc_mainwindow.o
 ./release\moc_gamewindow.o
 ./release\moc_howtodialog.o

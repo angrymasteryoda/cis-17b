@@ -2,7 +2,7 @@
 #include "ui_gamewindow.h"
 #include "mainwindow.h"
 #include "howtodialog.h"
-#include "save.h"
+#include "settings.h"
 
 #include <QDebug>
 #include <cmath>
@@ -26,6 +26,7 @@ GameWindow::GameWindow( QWidget *parent, int level ) : QMainWindow( parent ), ui
     if( level == -1 ){
         //load
         isLoadGame = true;
+        initCells();
         load();
         startTime.start();
         print();
@@ -246,6 +247,7 @@ void GameWindow::initGame(){
  * @brief GameWindow::shuffle
  */
 void GameWindow::shuffle(){
+    //shuffle numbers in board
     for ( int i = 0; i < 42; i++ ) {
         int n1 = ( rand( ) % 9 ) + 1;
         int n2;
@@ -263,6 +265,7 @@ void GameWindow::shuffle(){
         }
     }
 
+    // shuffle columns from each column of subsquares
     for( int i = 0; i < 42; i++ ){
         int s1 = ( rand() % 3 );
         int s2 = ( rand() % 3 );
@@ -274,6 +277,7 @@ void GameWindow::shuffle(){
         }
     }
 
+    // shuffle columns within each column of subsquares
     for( int i = 0; i < 42; i++ ){
         int c1 = ( rand() % 3 );
         int c2 = ( rand() % 3 );
@@ -285,6 +289,7 @@ void GameWindow::shuffle(){
         }
     }
 
+    // shuffle rows within each row of subsquares
     for( int i = 0; i < 42; i++ ){
         int r1 = ( rand() % 3 );
         int r2 = ( rand() % 3 );

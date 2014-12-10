@@ -4,20 +4,18 @@ SOURCES += \
     gamewindow.cpp \
     howtodialog.cpp \
     database.cpp \
-    settings.cpp \
+    settings.cpp
 QT += sql
 FORMS += \
     mainwindow.ui \
     gamewindow.ui \
     howtodialog.ui
-
 HEADERS += \
     mainwindow.h \
     gamewindow.h \
     howtodialog.h \
     database.h \
-    settings.h \
-
+    settings.h
 RESOURCES += \
     resources.qrc
 
