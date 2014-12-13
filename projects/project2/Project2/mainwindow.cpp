@@ -19,7 +19,8 @@ MainWindow::~MainWindow()
 }
 
 void MainWindow::on_newButton_clicked() {
-    GameWindow *game = new GameWindow( 0, ui->difficultyCombo->currentIndex() );
+    int level = ui->difficultyCombo->currentIndex() == 4 ? 0xff : ui->difficultyCombo->currentIndex();
+    GameWindow *game = new GameWindow( 0, level );
     game->show();
     this->close();
 }

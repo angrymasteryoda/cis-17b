@@ -5,10 +5,8 @@ INPUT(
 ./release\howtodialog.o
 ./release\database.o
 ./release\settings.o
-./release\connection.o
 ./release\moc_mainwindow.o
 ./release\moc_gamewindow.o
 ./release\moc_howtodialog.o
-./release\moc_connection.o
 ./release\qrc_resources.o
 );

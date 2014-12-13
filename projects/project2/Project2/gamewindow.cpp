@@ -1,3 +1,4 @@
+#include "connection.h"
 #include "gamewindow.h"
 #include "ui_gamewindow.h"
 #include "mainwindow.h"
@@ -232,7 +233,7 @@ void GameWindow::initGame(){
     if( !isLoadGame ){
         for ( int i = 0; i < 9; i++ ) {
             for ( int j = 0; j < 9; j++ ) {
-                gameMatrix[i * 9 + j] = (int) ( i * 3 + floor( i / 3 ) + j ) % 9 + 1;
+                gameMatrix[i * 9 + j] = (int) ( i * 3 + floor( i / 3.0 ) + j ) % 9 + 1;
             }
         }
 
@@ -330,9 +331,9 @@ void GameWindow::showNumbers(){
                     do{
                         c = rand() % 9;
                     }
-                    while( mask[ (int)( i * 3 + floor( c / 3 ) ) * 9 + j * 3 + c % 3 ] == 0 );
+                    while( mask[ (int)( i * 3 + floor( c / 3.0 ) ) * 9 + j * 3 + c % 3 ] == 0 );
 
-                    mask[ (int)( i * 3 + floor( c / 3 ) ) * 9 + j * 3 + c %3 ] = 0;
+                    mask[ (int)( i * 3 + floor( c / 3.0 ) ) * 9 + j * 3 + c %3 ] = 0;
                 }
             }
         }
@@ -1015,10 +1016,20 @@ void GameWindow::isSolved(){
  * @brief GameWindow::gameOver
  */
 void GameWindow::gameOver(){
-    QMessageBox::StandardButton reply;
+    QMessageBox::StandardButton save;
     int time = ( ( timeLoad + startTime.elapsed() ) / 1000 ) / 60;
-    QString msg = QString("You Won! It took you %1 minutes to finish. Start a new game?").arg( time );
-    reply = QMessageBox::question(this, tr("You Won!"), msg, QMessageBox::Yes | QMessageBox::No );
+    QString msg = QString("You Won! It took you %1 minutes to finish. Save Score?").arg( time );
+    save = QMessageBox::question(this, tr("You Won!"), msg, QMessageBox::Save | QMessageBox::Cancel );
+    if( save == QMessageBox::Save ){
+        qDebug() << "if the database was working would be used here";
+    }
+
+    Connection *con = new Connection;
+    con->exec();
+
+    QMessageBox::StandardButton reply;
+    QString msg2 = QString("Start a new game?");
+    reply = QMessageBox::question(this, tr("You Won!"), msg2, QMessageBox::Yes | QMessageBox::No );
     if (reply == QMessageBox::Yes) {
         newGame();
     }

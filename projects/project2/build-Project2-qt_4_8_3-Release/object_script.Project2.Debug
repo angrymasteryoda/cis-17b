@@ -5,10 +5,8 @@ INPUT(
 ./debug\howtodialog.o
 ./debug\database.o
 ./debug\settings.o
-./debug\connection.o
 ./debug\moc_mainwindow.o
 ./debug\moc_gamewindow.o
 ./debug\moc_howtodialog.o
-./debug\moc_connection.o
 ./debug\qrc_resources.o
 );

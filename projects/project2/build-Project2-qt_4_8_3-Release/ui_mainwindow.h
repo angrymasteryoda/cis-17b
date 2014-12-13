@@ -159,7 +159,6 @@ public:
          << QApplication::translate("MainWindow", "Medium", 0, QApplication::UnicodeUTF8)
          << QApplication::translate("MainWindow", "Hard", 0, QApplication::UnicodeUTF8)
          << QApplication::translate("MainWindow", "Insane", 0, QApplication::UnicodeUTF8)
-         << QApplication::translate("MainWindow", "Debug", 0, QApplication::UnicodeUTF8)
         );
         newButton->setText(QApplication::translate("MainWindow", "New Game", 0, QApplication::UnicodeUTF8));
         pushButton->setText(QApplication::translate("MainWindow", "Continue", 0, QApplication::UnicodeUTF8));
